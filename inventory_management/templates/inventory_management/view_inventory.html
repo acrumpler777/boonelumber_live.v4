@@ -1,0 +1,77 @@
+{% extends 'login_home/base.html' %}
+
+{% block content %}
+{% include 'login_home/navbar.html' %}
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>view_inventory_Final_use this one</title>
+
+</head>
+
+<body>
+
+    <div style="margin-top: 10px;margin-right: 10px;margin-bottom: 10px;margin-left: 10px;">
+
+        <div>
+            <ul class="nav nav-tabs" style="margin-bottom: 8px; margin-top: 25px;font-size: 16px;margin-right: 0px;">
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_All' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_All' %}" style="background-color: rgba(63,90,234,0);color: rgb(0,0,0);">All</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_401_WRC' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_401_WRC' %}" style="background-color: rgba(63,90,234,0);color: rgb(0,0,0);">401 WRC</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_AYC' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_AYC' %}" style="color: rgb(0,0,0);background-color: rgba(239,11,11,0);margin-left: 2px;">AYC</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_CandBTR' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_CandBTR' %}" style="color: rgb(0,0,0);background-color: rgba(61,190,0,0);margin-left: 2px;">C&amp;BTR &amp; Fine Grain D-FIR</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_Cypress' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_Cypress' %}" style="color: rgb(0,0,0);background-color: rgba(200,194,45,0);margin-left: 2px;">Cypress</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_D_FIR' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_D_FIR' %}" style="color: rgb(0,0,0);background-color: rgba(0,0,0,0);margin-left: 2px;">D-FIR</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_EWP' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_EWP' %}" style="color: rgb(0,0,0);background-color: rgba(187,22,245,0);margin-left: 2px;">EWP</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_Oak' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_Oak' %}" style="color: rgb(0,0,0);background-color: rgba(0,5,135,0);margin-left: 2px;">Oak</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_Spruce' %} class="nav-link active" {% else %} class="nav-link" {% endif %}" href="{% url 'view_inventory_Spruce' %}" style="color: rgb(0,0,0);background-color: rgba(119,118,118,0);margin-left: 2px;">Spruce</a></li>
+                <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_WRC' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_WRC' %}" style="color: rgb(0,0,0);background-color: rgba(255,111,80,0);margin-left: 2px;">WRC</a></li>
+                 <a class="btn btn-primary d-flex float-right d-xl-flex justify-content-xl-end align-items-xl-end" role="button" style="background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);height: 31px;font-size: 12px;margin-top: 3px;margin-right: 2px;margin-bottom: 3px;margin-left: 8px;"
+    href="{% url 'export_users_csv' %}">Export All Products</a>
+
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab-8">
+                    <div class="table-responsive-md table table-sm" style="margin-bottom: 0px;background-color: rgba(86,18,18,0);">
+                        <table class="table table-hover table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Product</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Price</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Pcs/Unit</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Total Quantity</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">B.F. Total</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Total USD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in items %}
+                                <tr>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.unique_product }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.price }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.pcs_Per_Unit }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.total_quantity }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.bF_Total }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.Total_USD }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}
+

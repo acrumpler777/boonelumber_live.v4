@@ -1,0 +1,260 @@
+{% extends 'login_home/base.html' %}
+
+{% block content %}
+{% include 'login_home/navbar.html' %}
+<br>
+<div class="container w-100" >
+    <h2 class="text-center">Purchase Order</h2>
+    <hr>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <h4 class="text-center">Company Information</h4>
+        <br>
+
+         <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Company:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.company }}</div>
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Address:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.address }}</div>
+
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Phone:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.phone }}</div>
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Email:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.email }}</div>
+
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Date:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: 180px;padding-right: 5px;">{{ form.date }}</div>
+                </div>
+            </div>
+        </body>
+
+        <hr>
+    <h4 class="text-center">Orders</h4>
+
+
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product1 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #1:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity1 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product2 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #2:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity2 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product3 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #3:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity3 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product4 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #4:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity4 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product5 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #5:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity5 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product6 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #6:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity6 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product7 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #7:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity7 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product8 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #8:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity8 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product9 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #9:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity9 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product10 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #10:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity10 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product11 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #11:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity11 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product12 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #12:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity12 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product13 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #13:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity13 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product14 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #14:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity14 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product15 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #15:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity15 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product16 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #16:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity16 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product17 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #17:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity17 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product18 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #18:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity18 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product19 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #19:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity19 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 5px;width: auto;max-width: 112px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product20 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 112px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 149px;">Quantity #20:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity20 }}</div>
+                </div>
+            </div>
+
+        <br>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit" style="background-color: rgb(0,123,255);border-color: rgba(255,255,255,0);width: 84px;margin-left: 8px;">Submit</button>
+            </div>
+        </body>
+
+    </form>
+</div>
+
+{% endblock %}
