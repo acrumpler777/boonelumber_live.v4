@@ -26,7 +26,7 @@ SECRET_KEY = 'oek&rxqo8t(bg5asz)hi7woojl^d*yasw(i45kf(z_2ttr(hpq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  #changes pictures when false so do not worry!
 
-ALLOWED_HOSTS = ['boonelumberlive-cli.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['boonelumber.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -104,8 +104,6 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 
 # Password validation
