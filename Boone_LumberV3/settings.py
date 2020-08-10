@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'oek&rxqo8t(bg5asz)hi7woojl^d*yasw(i45kf(z_2ttr(hpq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  #changes pictures when false so do not worry!
+DEBUG = True  #changes pictures when false so do not worry!
 
 ALLOWED_HOSTS = ['boonelumber.herokuapp.com', '127.0.0.1']
 
@@ -93,6 +93,7 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+
 '''
 
 DATABASES = {
@@ -141,9 +142,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+'''
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
+'''
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
@@ -151,6 +152,8 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 
 # SMTP Configuration
@@ -165,15 +168,15 @@ DEFAULT_FROM_EMAIL = 'Boone Lumber <noreply.BooneLumber@gmail.com>'
 EMAIL_SUBJECT_PREFIX = '[Boone Lumber]'
 
 
-'''
-#S3 BUCKETS CONFIG
-AWS_ACCESS_KEY_ID = 'AKIAUQVRUOI25XJEUAVA'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'acrumpler777-boonelumber-bucket'
+
+# S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = 'AKIAUQVRUOI2TCRTQ3XV'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'boone-lumber-buckets'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-'''
+
