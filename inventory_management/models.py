@@ -7,7 +7,7 @@ from decimal import Decimal
 # Create your models here.
 class product(ComputedFieldsModel):
     unique_product = models.CharField("Unique Product", max_length=200, blank=False, unique=True)  # ex. 401 WRC | "401" Clear | 10x10 | 6 ft
-    price = models.DecimalField(max_digits=12, decimal_places=2, blank=False)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0, blank=False)
     total_quantity = models.IntegerField("Total Quantity", blank=False, default=0)
     pcs_Per_Unit = models.IntegerField(null=True, validators=[MinValueValidator(1)], default=1)
     date_created = models.DateTimeField(auto_now_add=True)
