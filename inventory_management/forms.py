@@ -81,12 +81,11 @@ override_choices = (
     ("----", "----"),
     ("Yes","Yes"),
 )
-user_queryset = User.objects.all()
+
 class inventory_adjustment_form(forms.Form):
 
     unique_product1 = forms.ModelChoiceField(label='Product', widget=forms.Select(attrs={'class': 'form-control'}), queryset=queryset)
     order_quantity1 = forms.IntegerField(label='Adjustment Quantity', initial=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    user = forms.ModelChoiceField(label='Username', queryset=user_queryset, widget=forms.Select(attrs={'class': 'form-control'}))
     adjustment_reason = forms.CharField(label='Reason for Adjustment', required=False, max_length=2000, widget=forms.Textarea(attrs={'class': 'form-control' }))
     override = forms.ChoiceField(label='Select "Yes" to process an override', choices=override_choices, required=False, widget=forms.Select(attrs={'class': 'form-control'}))
 

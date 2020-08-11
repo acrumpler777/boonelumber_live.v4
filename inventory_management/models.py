@@ -11,6 +11,7 @@ class product(ComputedFieldsModel):
     total_quantity = models.IntegerField("Total Quantity", blank=False, default=0)
     pcs_Per_Unit = models.IntegerField(null=True, validators=[MinValueValidator(1)], default=1)
     date_created = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, default=1,on_delete=models.SET_DEFAULT)
 
     @computed(models.CharField(max_length=400),
               depends=[['self', ['unique_product']]])
@@ -99,11 +100,12 @@ class purchase_order_model(models.Model):
     order_quantity19 = models.IntegerField("Order Quantity #19", blank=True, null=True)
     unique_product20 = models.CharField("Unique Product #20", max_length=200, blank=True, null=True)
     order_quantity20 = models.IntegerField("Order Quantity #20", blank=True, null=True)
-
     date_created = models.DateTimeField(auto_now_add=True)
+    created_by = models.CharField(max_length=200)
 
     class Meta:
         ordering = ['id']
+
 
     def __str__(self):
         return 'Purchase Order #{0}'.format(self.id)
@@ -112,11 +114,11 @@ class adjustment_model(models.Model):
 
     unique_product1 = models.CharField("Unique Product", max_length=200)
     order_quantity1 = models.IntegerField('Adjustment Quantity')
-    user = models.CharField('Username', blank=True, null=True, max_length=2000)
     adjustment_reason = models.CharField('Reason For Adjustment', blank=True, null=True, max_length=2000)
     override = models.CharField("Override", blank=True, null=True, max_length=200)
 
     date_created = models.DateTimeField(auto_now_add=True)
+    created_by = models.CharField(max_length=200)
 
     class Meta:
         ordering = ['id']
@@ -221,6 +223,7 @@ class sales_order_model(models.Model):
     order_quantity20 = models.IntegerField("Fulfillment Quantity #20", blank=True, null=True)
 
     date_created = models.DateTimeField(auto_now_add=True)
+    created_by = models.CharField(max_length=200)
 
     class Meta:
         ordering = ['id']

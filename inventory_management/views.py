@@ -32,6 +32,7 @@ def purchase_order_func(request):
             email = form.cleaned_data['email']
             date = form.cleaned_data['date']
 
+
             unique_product1 = form.cleaned_data['unique_product1']
             order_quantity1 = form.cleaned_data['order_quantity1']
             product1_db = product.objects.get(unique_product=unique_product1)
@@ -228,6 +229,7 @@ def purchase_order_func(request):
                 product20_db.total_quantity = F('total_quantity') + order_quantity20
                 product20_db.save()
 
+
             db_insert = purchase_order_model(company=company, address=address, phone=phone, email=email, date=date,
                                        unique_product1=unique_product1, order_quantity1=order_quantity1,
                                        unique_product2=unique_product2, order_quantity2=order_quantity2,
@@ -248,7 +250,7 @@ def purchase_order_func(request):
                                        unique_product17=unique_product17, order_quantity17=order_quantity17,
                                        unique_product18=unique_product18, order_quantity18=order_quantity18,
                                        unique_product19=unique_product19, order_quantity19=order_quantity19,
-                                       unique_product20=unique_product20, order_quantity20=order_quantity20,)
+                                       unique_product20=unique_product20, order_quantity20=order_quantity20, created_by = request.user.username,)
             db_insert.save()
 
         return redirect('inventory_management')
@@ -269,7 +271,7 @@ def inventory_adjustment(request):
 
             unique_product1 = form.cleaned_data['unique_product1']
             order_quantity1 = form.cleaned_data['order_quantity1']
-            user = form.cleaned_data['user']
+
             adjustment_reason = form.cleaned_data['adjustment_reason']
 
             total_quantity = product.objects.get(unique_product=unique_product1)
@@ -285,8 +287,7 @@ def inventory_adjustment(request):
                 product1_db.save()
 
                 db_insert = adjustment_model(unique_product1=unique_product1, order_quantity1=order_quantity1,
-                                             user=user,
-                                             adjustment_reason=adjustment_reason, override=override)
+                                             adjustment_reason=adjustment_reason, override=override, created_by = request.user.username,)
                 db_insert.save()
                 return redirect('inventory_management')
             else:
@@ -834,7 +835,7 @@ def sales_order(request):
                                               unique_product17=unique_product17, order_quantity17=order_quantity17,
                                               unique_product18=unique_product18, order_quantity18=order_quantity18,
                                               unique_product19=unique_product19, order_quantity19=order_quantity19,
-                                              unique_product20=unique_product20, order_quantity20=order_quantity20, )
+                                              unique_product20=unique_product20, order_quantity20=order_quantity20, created_by = request.user.username,)
                 db_insert.save()
                 return redirect('inventory_management')
                 ##########################################
