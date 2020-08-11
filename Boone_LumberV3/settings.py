@@ -58,9 +58,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# add commented out section  below if I want to get rid of "not secure" and add an SSL
+'''
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
-
+'''
 ROOT_URLCONF = 'Boone_LumberV3.urls'
 
 TEMPLATES = [
