@@ -10,6 +10,7 @@ class product(ComputedFieldsModel):
     price = models.DecimalField(max_digits=12, decimal_places=2, blank=False)
     total_quantity = models.IntegerField("Total Quantity", blank=False, default=0)
     pcs_Per_Unit = models.IntegerField(null=True, validators=[MinValueValidator(1)], default=1)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     @computed(models.CharField(max_length=400),
               depends=[['self', ['unique_product']]])
@@ -218,8 +219,6 @@ class sales_order_model(models.Model):
     order_quantity19 = models.IntegerField("Fulfillment Quantity #19", blank=True, null=True)
     unique_product20 = models.CharField("Fulfillment Product #20", max_length=200, blank=True, null=True)
     order_quantity20 = models.IntegerField("Fulfillment Quantity #20", blank=True, null=True)
-
-
 
     date_created = models.DateTimeField(auto_now_add=True)
 
