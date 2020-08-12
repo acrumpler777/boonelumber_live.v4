@@ -1,0 +1,66 @@
+{% extends 'login_home/base.html' %}
+
+{% block content %}
+{% include 'login_home/navbar.html' %}
+<br>
+<div class="container w-100" >
+    <h2 class="text-center">Update Inventory Item</h2>
+    <hr>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 0px;width: 76px;max-width: 200px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Product:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: 500px;padding-right: 20px;">{{ form.unique_product1 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 0px;width: 76px;max-width: 200px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Adjustment Quantity:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.order_quantity1 }}</div>
+                </div>
+            </div>
+        </body>
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 0px;width: 76px;max-width: 200px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Reason For Adjustment:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: auto; padding-right: 20px;">{{form.adjustment_reason}}</div>
+                </div>
+            </div>
+        </body>
+        {% for message in messages %}
+            <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 13px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+        {% endfor %}
+
+         {% if messages %}
+        <body>
+            <div style="padding-top: 13px;">
+                <div class="row">
+                    <div class="col" style="padding-right: 0px;width: 76px;max-width: 200px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Override:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 3px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.override }}</div>
+                </div>
+            </div>
+        </body>
+        {% endif %}
+
+            <br>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit" style="background-color: rgb(0,123,255);border-color: rgba(255,255,255,0);width: 84px;margin-left: 8px;">Submit</button>
+                </div>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+

@@ -45,6 +45,7 @@
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Total Quantity</th>
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">B.F. Total</th>
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Total USD</th>
+                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Update</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,6 +57,7 @@
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.total_quantity }}</td>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.bF_Total }}</td>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.Total_USD }}</td>
+                                    <td class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 12px;height: 27px;"><a class="btn btn-primary d-xl-flex justify-content-xl-center align-items-xl-center" role="button" style="height: 20px;font-size: 12px;background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);" href="{% url 'update_inventory' item.id %}">Update</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

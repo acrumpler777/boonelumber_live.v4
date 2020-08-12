@@ -28,10 +28,25 @@ class product(ComputedFieldsModel):
     def size(self):
         return self.unique_product.split(' | ')[2]
 
+    @computed(models.IntegerField(),
+              depends=[['self', ['size']]])
+    def size_left(self):
+        return self.size.split('x')[0]
+
+    @computed(models.IntegerField(),
+              depends=[['self', ['size']]])
+    def size_right(self):
+        return self.size.split('x')[1]
+
     @computed(models.CharField(max_length=400),
               depends=[['self', ['unique_product']]])
     def length(self):
         return self.unique_product.split(' | ')[3]
+
+    @computed(models.IntegerField(),
+              depends=[['self', ['length']]])
+    def length_value(self):
+        return self.length.split(' ft')[0]
 
     @computed(models.DecimalField(null=True, max_digits=12, decimal_places=2,
                                   validators=[MinValueValidator(0), MaxValueValidator(100000)]),
@@ -47,7 +62,7 @@ class product(ComputedFieldsModel):
         return (float(self.price) * self.bF_Total) / 1000
 
     class Meta:
-        ordering = ['unique_product']
+        ordering = ['inventory_group', 'grade', 'size_left', 'size_right', 'length_value']
 
     def __str__(self):
         return self.unique_product

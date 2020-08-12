@@ -303,6 +303,52 @@ def inventory_adjustment(request):
     }
     return render(request, 'inventory_management/inventory_adjustment.html', context)
 
+@login_required(login_url='login')
+def update_inventory(request, pk):
+    update_item = product.objects.get(id=pk)
+
+
+    if request.method == 'POST':
+        form = inventory_adjustment_form(request.POST,initial={'unique_product1':update_item})  #alter this form
+        if form.is_valid():
+
+            unique_product1 = form.cleaned_data['unique_product1']
+            order_quantity1 = form.cleaned_data['order_quantity1']
+
+            adjustment_reason = form.cleaned_data['adjustment_reason']
+
+            total_quantity = product.objects.get(unique_product=unique_product1)
+            total_quantity = total_quantity.total_quantity
+            total_quantity = total_quantity + order_quantity1
+
+            override = form.cleaned_data['override']
+
+            if total_quantity >= 0 or override == "Yes":
+
+                product1_db = product.objects.get(unique_product=unique_product1)
+                product1_db.total_quantity = F('total_quantity') + order_quantity1
+                product1_db.save()
+
+                db_insert = adjustment_model(unique_product1=unique_product1, order_quantity1=order_quantity1,
+                                             adjustment_reason=adjustment_reason, override=override, created_by = request.user.username,)
+                db_insert.save()
+                return redirect('inventory_management')
+            else:
+                messages.info(request, 'Total quantity for product "{0}" will update to "{1}". Select "Yes" below to override.'.format(unique_product1, total_quantity))
+                context = {
+                    'form': form,
+                }
+                return render(request, 'inventory_management/update_inventory.html', context)
+
+    form = inventory_adjustment_form(initial={'unique_product1':update_item})
+
+
+    context = {
+        'form':form,
+
+    }
+    return render(request, 'inventory_management/update_inventory.html', context)
+
 
 @login_required(login_url='login')
 def sales_order(request):
