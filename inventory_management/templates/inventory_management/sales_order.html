@@ -7,9 +7,10 @@
     {%for message in messages %}
         {%if "warning1" in message.tags %}
             <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
-        <br>
-    {% endif %}
+            <br>
+        {% endif %}
     {% endfor %}
+
     <h2 class="text-center">Sales Order</h2>
     <hr>
 
@@ -563,21 +564,22 @@
                     <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
                 {%endif%}
             {%endfor%}
-        {% for message in messages %}
-        {%if "warning1" in message.tags %}
-        {% else %}
-        <body>
-            <div style="padding-top: 13px;">
-                <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Override:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.override }}</div>
-                </div>
-            </div>
-        </body>
 
 
-        {% endif %}
-         {% endfor %}
+            {% if request.method == 'POST' %}
+             <body>
+                 <div style="padding-top: 13px;">
+                     <div class="row">
+                         <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Override Negative Inventory:</label></div>
+                         <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.override }}</div>
+                     </div>
+                 </div>
+             </body>
+            {% endif %}
+
+
+
+
 
         <br>
         <div class="text-center">

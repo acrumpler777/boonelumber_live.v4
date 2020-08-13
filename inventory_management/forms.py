@@ -16,6 +16,8 @@ class POForm(forms.Form):
     email = forms.EmailField(label='Email', required=False, widget=forms.TextInput(attrs={'class': 'form-control' }))
     date = forms.DateField(label='Date', widget=DateInput(attrs={'class': 'form-control' }), required=False)
 
+
+
     unique_product1 = forms.ModelChoiceField(label='Product #1', queryset=queryset, widget=forms.Select(attrs={'class': 'form-control'}))
     order_quantity1 = forms.IntegerField(label='Order Quantity #1', initial=0, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
 
