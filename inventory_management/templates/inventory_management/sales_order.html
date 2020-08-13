@@ -4,9 +4,14 @@
 {% include 'login_home/navbar.html' %}
 <br>
 <div class="container w-100" >
+    {%for message in messages %}
+        {%if "warning1" in message.tags %}
+            <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+        <br>
+    {% endif %}
+    {% endfor %}
     <h2 class="text-center">Sales Order</h2>
     <hr>
-
 
     <form action="" method="post">
         {% csrf_token %}
@@ -558,9 +563,9 @@
                     <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
                 {%endif%}
             {%endfor%}
-
-        {% if messages %}
-
+        {% for message in messages %}
+        {%if "warning1" in message.tags %}
+        {% else %}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
@@ -571,8 +576,8 @@
         </body>
 
 
-
         {% endif %}
+         {% endfor %}
 
         <br>
         <div class="text-center">

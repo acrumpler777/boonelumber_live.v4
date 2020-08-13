@@ -39,15 +39,44 @@ def purchase_order_func(request):
             product1_db.total_quantity = F('total_quantity') + order_quantity1
             product1_db.save()
 
-            if form.cleaned_data['unique_product2'] == None:
-                unique_product2= None
-                order_quantity2= None
+            if (form.cleaned_data['unique_product2'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product3'] == None and form.cleaned_data['order_quantity3']) > 0\
+                    or (form.cleaned_data['unique_product4'] == None and form.cleaned_data['order_quantity4']) > 0\
+                    or (form.cleaned_data['unique_product5'] == None and form.cleaned_data['order_quantity5']) > 0\
+                    or (form.cleaned_data['unique_product6'] == None and form.cleaned_data['order_quantity6']) > 0\
+                    or (form.cleaned_data['unique_product7'] == None and form.cleaned_data['order_quantity7']) > 0\
+                    or (form.cleaned_data['unique_product8'] == None and form.cleaned_data['order_quantity8']) > 0\
+                    or (form.cleaned_data['unique_product9'] == None and form.cleaned_data['order_quantity9']) > 0\
+                    or (form.cleaned_data['unique_product10'] == None and form.cleaned_data['order_quantity10']) > 0\
+                    or (form.cleaned_data['unique_product11'] == None and form.cleaned_data['order_quantity11']) > 0\
+                    or (form.cleaned_data['unique_product12'] == None and form.cleaned_data['order_quantity12']) > 0\
+                    or (form.cleaned_data['unique_product13'] == None and form.cleaned_data['order_quantity13']) > 0\
+                    or (form.cleaned_data['unique_product14'] == None and form.cleaned_data['order_quantity14']) > 0\
+                    or (form.cleaned_data['unique_product15'] == None and form.cleaned_data['order_quantity15']) > 0\
+                    or (form.cleaned_data['unique_product16'] == None and form.cleaned_data['order_quantity16']) > 0\
+                    or (form.cleaned_data['unique_product17'] == None and form.cleaned_data['order_quantity17']) > 0\
+                    or (form.cleaned_data['unique_product18'] == None and form.cleaned_data['order_quantity18']) > 0\
+                    or (form.cleaned_data['unique_product19'] == None and form.cleaned_data['order_quantity19']) > 0\
+                    or (form.cleaned_data['unique_product20'] == None and form.cleaned_data['order_quantity20']) > 0:
+
+                messages.info(request,
+                              'All orders with quantity greater than 0 must be associated with a product.',
+                              extra_tags='warning')
+                context = {
+                    'form': form,
+                }
+                return render(request, 'inventory_management/purchase_order.html', context)
             else:
-                unique_product2 = form.cleaned_data['unique_product2']
-                order_quantity2 = form.cleaned_data['order_quantity2']
-                product2_db = product.objects.get(unique_product=unique_product2)
-                product2_db.total_quantity = F('total_quantity') + order_quantity2
-                product2_db.save()
+
+                if form.cleaned_data['unique_product2'] == None:
+                    unique_product2= None
+                    order_quantity2= None
+                else:
+                    unique_product2 = form.cleaned_data['unique_product2']
+                    order_quantity2 = form.cleaned_data['order_quantity2']
+                    product2_db = product.objects.get(unique_product=unique_product2)
+                    product2_db.total_quantity = F('total_quantity') + order_quantity2
+                    product2_db.save()
 
             if form.cleaned_data['unique_product3'] == None:
                 unique_product3= None
@@ -302,7 +331,7 @@ def inventory_adjustment(request):
         'form':form,
     }
     return render(request, 'inventory_management/inventory_adjustment.html', context)
-
+"""
 @login_required(login_url='login')
 def update_inventory(request, pk):
     update_item = product.objects.get(id=pk)
@@ -348,7 +377,7 @@ def update_inventory(request, pk):
 
     }
     return render(request, 'inventory_management/update_inventory.html', context)
-
+"""
 
 @login_required(login_url='login')
 def sales_order(request):
@@ -374,6 +403,96 @@ def sales_order(request):
             total_quantity1 = product.objects.get(unique_product=unique_product1)
             total_quantity1 = total_quantity1.total_quantity
             total_quantity1 = total_quantity1 - order_quantity1
+
+            if (form.cleaned_data['so_unique_product1'] == None and form.cleaned_data['so_order_quantity1'] >0)\ #come back the right side
+                    or (form.cleaned_data['unique_product1'] == None and form.cleaned_data['order_quantity1'] >0)\
+                    or (form.cleaned_data['so_order_quantity1'] == 0 and form.cleaned_data['order_quantity1'] >0)\
+                    or (form.cleaned_data['so_order_quantity1'] >0 and form.cleaned_data['order_quantity1'] == 0)\
+                    or (form.cleaned_data['so_unique_product2'] == None and form.cleaned_data['so_order_quantity2'] >0)\
+                    or (form.cleaned_data['unique_product2'] == None and form.cleaned_data['order_quantity2'] >0)\
+                    or (form.cleaned_data['so_order_quantity2'] == 0 and form.cleaned_data['order_quantity2'] >0)\
+                    or (form.cleaned_data['so_order_quantity2'] >0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product3'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product3'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity3'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity3'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product4'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product4'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity4'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity4'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product5'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product5'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity5'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity5'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product6'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product6'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity6'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity6'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product7'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product7'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity7'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity7'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product8'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product8'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity8'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity8'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product9'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product9'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity9'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity9'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product10'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product10'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity10'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity10'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product11'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product11'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity11'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity11'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product12'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product12'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity12'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity12'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product13'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product13'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity13'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity13'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product14'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product14'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity14'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity14'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product15'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product15'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity15'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity15'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product16'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product16'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity16'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity16'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product17'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product17'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity17'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity17'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product18'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product18'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity18'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity18'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product19'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product19'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity19'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity19'] > 0 and form.cleaned_data['order_quantity2'] == 0) \
+                    or (form.cleaned_data['so_unique_product20'] == None and form.cleaned_data['so_order_quantity2'] > 0) \
+                    or (form.cleaned_data['unique_product20'] == None and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity20'] == 0 and form.cleaned_data['order_quantity2'] > 0) \
+                    or (form.cleaned_data['so_order_quantity20'] > 0 and form.cleaned_data['order_quantity2'] == 0):
+                messages.info(request,
+                              'All orders with quantity greater than 0 must be associated with a product. Also, if fulfillment quantity is greater than 0, then shipping quantity must be greater than 0, and vice versa.',
+                              extra_tags="warning1")
+                context = {
+                    'form':form,
+                }
+                return render(request, 'inventory_management/sales_order.html', context)
+
+
 
             if form.cleaned_data['so_unique_product2'] == None:
                 so_unique_product2 = None

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'decimal',
     'widget_tweaks',
     'storages',
+    'django.contrib.humanize',
+
 
 ]
 

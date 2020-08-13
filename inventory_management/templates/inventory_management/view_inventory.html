@@ -1,5 +1,5 @@
 {% extends 'login_home/base.html' %}
-
+{% load humanize %}
 {% block content %}
 {% include 'login_home/navbar.html' %}
 
@@ -29,18 +29,18 @@
                 <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_Spruce' %} class="nav-link active" {% else %} class="nav-link" {% endif %}" href="{% url 'view_inventory_Spruce' %}" style="color: rgb(0,0,0);background-color: rgba(119,118,118,0);margin-left: 2px;">Spruce</a></li>
                 <li class="nav-item"><a role="tab" data-toggle="tab" {% if request.resolver_match.url_name == 'view_inventory_WRC' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'view_inventory_WRC' %}" style="color: rgb(0,0,0);background-color: rgba(255,111,80,0);margin-left: 2px;">WRC</a></li>
                  <a class="btn btn-primary d-flex float-right d-xl-flex justify-content-xl-end align-items-xl-end" role="button" style="background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);height: 31px;font-size: 12px;margin-top: 3px;margin-right: 2px;margin-bottom: 3px;margin-left: 8px;"
-    href="{% url 'export_users_csv' %}">Export All Products</a>
+                 href="{% url 'export_users_csv' %}">Export All Products</a>
 
             </ul>
 
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="tab-8">
                     <div class="table-responsive-md table table-sm" style="margin-bottom: 0px;background-color: rgba(86,18,18,0);">
-                        <table class="table table-hover table table-striped">
+                        <table id="myTable" class="table table-hover table table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Product</th>
-                                    <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Price</th>
+                                    <th onclick="sortTable(0)" class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;" >Product</th>
+                                    <th onclick="sortTable(1)" class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Price</th>
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Pcs/Unit</th>
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">Total Quantity</th>
                                     <th class="text-center" style="font-size: 14px;background-color: #007bff;color: rgb(255,255,255); width: auto;">B.F. Total</th>
@@ -52,16 +52,20 @@
                                 {% for item in items %}
                                 <tr>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.unique_product }}</td>
-                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.price }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.price|intcomma }}</td>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.pcs_Per_Unit }}</td>
-                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.total_quantity }}</td>
-                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.bF_Total }}</td>
-                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.Total_USD }}</td>
-                                    <td class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 12px;height: 27px;"><a class="btn btn-primary d-xl-flex justify-content-xl-center align-items-xl-center" role="button" style="height: 20px;font-size: 12px;background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);" href="{% url 'update_inventory' item.id %}">Update</a></td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.total_quantity|intcomma }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.bF_Total|intcomma }}</td>
+                                    <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.Total_USD|intcomma }}</td>
+                                    <td class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 12px;height: 27px;"><a class="btn btn-primary d-xl-flex justify-content-xl-center align-items-xl-center" role="button" style="height: 19px; width: 60px;font-size: 12px;background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);" href="{% url 'update_inventory' item.id %}">Update</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
+
+
+
+
                     </div>
                 </div>
 
@@ -71,9 +75,17 @@
     </div>
     </div>
     </div>
+
+
+
+
 </body>
 
 </html>
 
 {% endblock %}
+
+
+
+
 

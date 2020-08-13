@@ -1,5 +1,5 @@
 {% extends 'login_home/base.html' %}
-
+{% load humanize %}
 {% block content %}
 
 <html lang="en">
@@ -33,13 +33,75 @@
               ]
             },
             options: {
+
               legend: { display: false },
               title: {
                 display: false,
                 text: 'Inventory Quantity by Group'
-              }
+              },
+              scales: {
+								      yAxes: [{
+								        ticks: {
+								          callback: function(value) {
+								            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+								          }
+								        }
+								      }]
+								    }
+					,
+              tooltips: {
+		        callbacks: {
+            label: function(tooltipItem, data) {
+                return Number(tooltipItem.yLabel).toFixed(0).replace(/./g, function(c, i, a) {
+                    return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+                });
+
+                } }
+					},
             }
         });
+
+        new Chart(document.getElementById("bar-chart2"), {
+            type: 'bar',
+            data: {
+              labels: [{% for item in dataset2_labels %}'{{item}}',{% endfor %}],
+              datasets: [
+                {
+                  label: "Quantity",
+                  backgroundColor: ["#F44336", "#9C27B0","#3F51B5", "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#FFEB3B","#FF9800"],
+                  data: [{% for item in dataset2_values %}{{item}},{% endfor %}]
+                }
+              ]
+            },
+            options: {
+
+              legend: { display: false },
+              title: {
+                display: false,
+                text: 'Inventory Quantity by Group'
+              },
+              scales: {
+								      yAxes: [{
+								        ticks: {
+								          callback: function(value) {
+								            return "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+								          }
+								        }
+								      }]
+								    }
+					,
+              tooltips: {
+		        callbacks: {
+            label: function(tooltipItem, data) {
+                return "$" + Number(tooltipItem.yLabel).toFixed(0).replace(/./g, function(c, i, a) {
+                    return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+                });
+
+                } }
+					},
+            }
+        });
+
 
         new Chart(document.getElementById("pie-chart"), {
             type: 'pie',
@@ -48,7 +110,7 @@
               datasets: [{
                 label: "Population (millions)",
                 backgroundColor: ["#F44336", "#9C27B0","#3F51B5", "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#FFEB3B","#FF9800"],
-                data: [{% for item in dataset2_values %}{{item}},{% endfor %}]
+                data: [{% for item in dataset2_values %}'{{item}}',{% endfor %}]
               }]
             },
             options: {
@@ -56,7 +118,9 @@
               title: {
                 display: false,
                 text: 'Inventory Total USD by Group'
-              }
+            },
+
+
             }
         });
 
@@ -74,7 +138,7 @@
                     </div>
                     <div class="col" style="padding-left: 7px;">
                         <div class="text-center"><h5>Total Inventory in USD by Group</h5></div>
-                        <canvas id="pie-chart" width=auto height=auto></canvas>
+                        <canvas id="bar-chart2" width=auto height=auto></canvas>
                     </div>
                 </div>
             </div>
@@ -104,7 +168,7 @@
                                     <tr>
                                         <td class="text-center" style="font-size: 12px;height: 27px;width: auto;">{{ forloop.counter }}</td>
                                         <td class="text-center" style="font-size: 12px;height: 27px;width: auto;">{{ label }}</td>
-                                        <td class="text-center" style="font-size: 12px;height: 27px;">{{ value }}</td>
+                                        <td class="text-center" style="font-size: 12px;height: 27px;">{{ value|intcomma }}</td>
                                     </tr>
                                     {% endfor %}
                                     <tr></tr>
@@ -128,7 +192,7 @@
                                     <tr>
                                         <td class="text-center" style="font-size: 12px;height: 27px;width: auto;">{{ forloop.counter }}</td>
                                         <td class="text-center" style="font-size: 12px;height: 27px;width: auto;">{{ label }}</td>
-                                        <td class="text-center" style="font-size: 12px;height: 27px;">{{ value }}</td>
+                                        <td class="text-center" style="font-size: 12px;height: 27px;">{{ value|intcomma }}</td>
                                     </tr>
                                     {% endfor %}
                                     <tr></tr>
