@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'Boone_LumberV3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # if this does not work just you code below
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -100,7 +100,27 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+"""
+"""
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Boone_Lumber',
+        'USER': 'acrumpler777',
+        'PASSWORD': 'Stupidhackers7#',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+"""
+# db.sqlite below
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 '''
 #test
 DATABASES = {
