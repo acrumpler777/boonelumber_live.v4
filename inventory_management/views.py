@@ -6,6 +6,7 @@ import csv
 from django.http import HttpResponse
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
@@ -32,130 +33,226 @@ def purchase_order_func(request):
             email = form.cleaned_data['email']
             date = form.cleaned_data['date']
 
-
             type_grade1 = form.cleaned_data['type_grade1']
             size1 = form.cleaned_data['size1']
             length1 = form.cleaned_data['length1']
             unique_product1= '{0} | {1} | {2}'.format(type_grade1, size1, length1)
             order_quantity1 = form.cleaned_data['order_quantity1']
-            product1_db = product.objects.get(unique_product=unique_product1)
-            product1_db.total_quantity = F('total_quantity') + order_quantity1
-            product1_db.save()
+            if unique_product1 == "---- | ---- | ----":
+                product1_db = True
+            else:
+                product1_db = product.objects.filter(unique_product=unique_product1).exists()
 
             type_grade2 = form.cleaned_data['type_grade2']
             size2 = form.cleaned_data['size2']
             length2 = form.cleaned_data['length2']
             unique_product2 = '{0} | {1} | {2}'.format(type_grade2, size2, length2)
+            order_quantity2 = form.cleaned_data['order_quantity2']
+            if unique_product2 == "---- | ---- | ----":
+                product2_db = True
+            else:
+                product2_db = product.objects.filter(unique_product=unique_product2).exists()
 
             type_grade3 = form.cleaned_data['type_grade3']
             size3 = form.cleaned_data['size3']
             length3 = form.cleaned_data['length3']
             unique_product3 = '{0} | {1} | {2}'.format(type_grade3, size3, length3)
+            order_quantity3 = form.cleaned_data['order_quantity3']
+            if unique_product3 == "---- | ---- | ----":
+                product3_db = True
+            else:
+                product3_db = product.objects.filter(unique_product=unique_product3).exists()
 
             type_grade4 = form.cleaned_data['type_grade4']
             size4 = form.cleaned_data['size4']
             length4 = form.cleaned_data['length4']
             unique_product4 = '{0} | {1} | {2}'.format(type_grade4, size4, length4)
+            order_quantity4 = form.cleaned_data['order_quantity4']
+            if unique_product4 == "---- | ---- | ----":
+                product4_db = True
+            else:
+                product4_db = product.objects.filter(unique_product=unique_product4).exists()
 
             type_grade5 = form.cleaned_data['type_grade5']
             size5 = form.cleaned_data['size5']
             length5 = form.cleaned_data['length5']
             unique_product5 = '{0} | {1} | {2}'.format(type_grade5, size5, length5)
+            order_quantity5 = form.cleaned_data['order_quantity5']
+            if unique_product5 == "---- | ---- | ----":
+                product5_db = True
+            else:
+                product5_db = product.objects.filter(unique_product=unique_product5).exists()
 
             type_grade6 = form.cleaned_data['type_grade6']
             size6 = form.cleaned_data['size6']
             length6 = form.cleaned_data['length6']
             unique_product6 = '{0} | {1} | {2}'.format(type_grade6, size6, length6)
+            order_quantity6 = form.cleaned_data['order_quantity6']
+            if unique_product6 == "---- | ---- | ----":
+                product6_db = True
+            else:
+                product6_db = product.objects.filter(unique_product=unique_product6).exists()
 
             type_grade7 = form.cleaned_data['type_grade7']
             size7 = form.cleaned_data['size7']
             length7 = form.cleaned_data['length7']
             unique_product7 = '{0} | {1} | {2}'.format(type_grade7, size7, length7)
+            order_quantity7 = form.cleaned_data['order_quantity7']
+            if unique_product7 == "---- | ---- | ----":
+                product7_db = True
+            else:
+                product7_db = product.objects.filter(unique_product=unique_product7).exists()
 
             type_grade8 = form.cleaned_data['type_grade8']
             size8 = form.cleaned_data['size8']
             length8 = form.cleaned_data['length8']
             unique_product8 = '{0} | {1} | {2}'.format(type_grade8, size8, length8)
+            order_quantity8 = form.cleaned_data['order_quantity8']
+            if unique_product8 == "---- | ---- | ----":
+                product8_db = True
+            else:
+                product8_db = product.objects.filter(unique_product=unique_product8).exists()
 
             type_grade9 = form.cleaned_data['type_grade9']
             size9 = form.cleaned_data['size9']
             length9 = form.cleaned_data['length9']
             unique_product9 = '{0} | {1} | {2}'.format(type_grade9, size9, length9)
+            order_quantity9 = form.cleaned_data['order_quantity9']
+            if unique_product9 == "---- | ---- | ----":
+                product9_db = True
+            else:
+                product9_db = product.objects.filter(unique_product=unique_product9).exists()
 
             type_grade10 = form.cleaned_data['type_grade10']
             size10 = form.cleaned_data['size10']
             length10 = form.cleaned_data['length10']
             unique_product10 = '{0} | {1} | {2}'.format(type_grade10, size10, length10)
+            order_quantity10 = form.cleaned_data['order_quantity10']
+            if unique_product10 == "---- | ---- | ----":
+                product10_db = True
+            else:
+                product10_db = product.objects.filter(unique_product=unique_product10).exists()
 
             type_grade11 = form.cleaned_data['type_grade11']
             size11 = form.cleaned_data['size11']
             length11 = form.cleaned_data['length11']
             unique_product11 = '{0} | {1} | {2}'.format(type_grade11, size11, length11)
+            order_quantity11 = form.cleaned_data['order_quantity11']
+            if unique_product11 == "---- | ---- | ----":
+                product11_db = True
+            else:
+                product11_db = product.objects.filter(unique_product=unique_product11).exists()
 
             type_grade12 = form.cleaned_data['type_grade12']
             size12 = form.cleaned_data['size12']
             length12 = form.cleaned_data['length12']
             unique_product12 = '{0} | {1} | {2}'.format(type_grade12, size12, length12)
+            order_quantity12 = form.cleaned_data['order_quantity12']
+            if unique_product12 == "---- | ---- | ----":
+                product12_db = True
+            else:
+                product12_db = product.objects.filter(unique_product=unique_product12).exists()
 
             type_grade13 = form.cleaned_data['type_grade13']
             size13 = form.cleaned_data['size13']
             length13 = form.cleaned_data['length13']
             unique_product13 = '{0} | {1} | {2}'.format(type_grade13, size13, length13)
+            order_quantity13 = form.cleaned_data['order_quantity13']
+            if unique_product13 == "---- | ---- | ----":
+                product13_db = True
+            else:
+                product13_db = product.objects.filter(unique_product=unique_product13).exists()
 
             type_grade14 = form.cleaned_data['type_grade14']
             size14 = form.cleaned_data['size14']
             length14 = form.cleaned_data['length14']
             unique_product14 = '{0} | {1} | {2}'.format(type_grade14, size14, length14)
+            order_quantity14 = form.cleaned_data['order_quantity14']
+            if unique_product14 == "---- | ---- | ----":
+                product14_db = True
+            else:
+                product14_db = product.objects.filter(unique_product=unique_product14).exists()
 
             type_grade15 = form.cleaned_data['type_grade15']
             size15 = form.cleaned_data['size15']
             length15 = form.cleaned_data['length15']
             unique_product15 = '{0} | {1} | {2}'.format(type_grade15, size15, length15)
+            order_quantity15 = form.cleaned_data['order_quantity15']
+            if unique_product15 == "---- | ---- | ----":
+                product15_db = True
+            else:
+                product15_db = product.objects.filter(unique_product=unique_product15).exists()
 
             type_grade16 = form.cleaned_data['type_grade16']
             size16 = form.cleaned_data['size16']
             length16 = form.cleaned_data['length16']
             unique_product16 = '{0} | {1} | {2}'.format(type_grade16, size16, length16)
+            order_quantity16 = form.cleaned_data['order_quantity16']
+            if unique_product16 == "---- | ---- | ----":
+                product16_db = True
+            else:
+                product16_db = product.objects.filter(unique_product=unique_product16).exists()
 
             type_grade17 = form.cleaned_data['type_grade17']
             size17 = form.cleaned_data['size17']
             length17 = form.cleaned_data['length17']
             unique_product17 = '{0} | {1} | {2}'.format(type_grade17, size17, length17)
+            order_quantity17 = form.cleaned_data['order_quantity17']
+            if unique_product17 == "---- | ---- | ----":
+                product17_db = True
+            else:
+                product17_db = product.objects.filter(unique_product=unique_product17).exists()
 
             type_grade18 = form.cleaned_data['type_grade18']
             size18 = form.cleaned_data['size18']
             length18 = form.cleaned_data['length18']
             unique_product18 = '{0} | {1} | {2}'.format(type_grade18, size18, length18)
+            order_quantity18 = form.cleaned_data['order_quantity18']
+            if unique_product18 == "---- | ---- | ----":
+                product18_db = True
+            else:
+                product18_db = product.objects.filter(unique_product=unique_product18).exists()
 
             type_grade19 = form.cleaned_data['type_grade19']
             size19 = form.cleaned_data['size19']
             length19 = form.cleaned_data['length19']
             unique_product19 = '{0} | {1} | {2}'.format(type_grade19, size19, length19)
+            order_quantity19 = form.cleaned_data['order_quantity19']
+            if unique_product19 == "---- | ---- | ----":
+                product19_db = True
+            else:
+                product19_db = product.objects.filter(unique_product=unique_product19).exists()
 
             type_grade20 = form.cleaned_data['type_grade20']
             size20 = form.cleaned_data['size20']
             length20 = form.cleaned_data['length20']
             unique_product20 = '{0} | {1} | {2}'.format(type_grade20, size20, length20)
+            order_quantity20 = form.cleaned_data['order_quantity20']
+            if unique_product20 == "---- | ---- | ----":
+                product20_db = True
+            else:
+                product20_db = product.objects.filter(unique_product=unique_product20).exists()
 
-            if (unique_product2 == None and form.cleaned_data['order_quantity2'] > 0) \
-                    or (unique_product3 == None and form.cleaned_data['order_quantity3']) > 0\
-                    or (unique_product4 == None and form.cleaned_data['order_quantity4']) > 0\
-                    or (unique_product5 == None and form.cleaned_data['order_quantity5']) > 0\
-                    or (unique_product6 == None and form.cleaned_data['order_quantity6']) > 0\
-                    or (unique_product7 == None and form.cleaned_data['order_quantity7']) > 0\
-                    or (unique_product8 == None and form.cleaned_data['order_quantity8']) > 0\
-                    or (unique_product9 == None and form.cleaned_data['order_quantity9']) > 0\
-                    or (unique_product10 == None and form.cleaned_data['order_quantity10']) > 0\
-                    or (unique_product11 == None and form.cleaned_data['order_quantity11']) > 0\
-                    or (unique_product12 == None and form.cleaned_data['order_quantity12']) > 0\
-                    or (unique_product13 == None and form.cleaned_data['order_quantity13']) > 0\
-                    or (unique_product14 == None and form.cleaned_data['order_quantity14']) > 0\
-                    or (unique_product15 == None and form.cleaned_data['order_quantity15']) > 0\
-                    or (unique_product16 == None and form.cleaned_data['order_quantity16']) > 0\
-                    or (unique_product17 == None and form.cleaned_data['order_quantity17']) > 0\
-                    or (unique_product18 == None and form.cleaned_data['order_quantity18']) > 0\
-                    or (unique_product19 == None and form.cleaned_data['order_quantity19']) > 0\
-                    or (unique_product20 == None and form.cleaned_data['order_quantity20']) > 0:
+            if (order_quantity1 > 0 and (type_grade1 == "----" or size1 == "----" or length1 == "----")) \
+                        or (order_quantity2 > 0 and (type_grade2 == "----" or size2 == "----" or length2 == "----")) \
+                        or (order_quantity3 > 0 and (type_grade3 == "----" or size3 == "----" or length3 == "----")) \
+                        or (order_quantity4 > 0 and (type_grade4 == "----" or size4 == "----" or length4 == "----")) \
+                        or (order_quantity5 > 0 and (type_grade5 == "----" or size5 == "----" or length5 == "----")) \
+                        or (order_quantity6 > 0 and (type_grade6 == "----" or size6 == "----" or length6 == "----")) \
+                        or (order_quantity7 > 0 and (type_grade7 == "----" or size7 == "----" or length7 == "----")) \
+                        or (order_quantity8 > 0 and (type_grade8 == "----" or size8 == "----" or length8 == "----")) \
+                        or (order_quantity9 > 0 and (type_grade9 == "----" or size9 == "----" or length9 == "----")) \
+                        or (order_quantity10 > 0 and (type_grade10 == "----" or size10 == "----" or length10 == "----")) \
+                        or (order_quantity11 > 0 and (type_grade11 == "----" or size11 == "----" or length11 == "----")) \
+                        or (order_quantity12 > 0 and (type_grade12 == "----" or size12 == "----" or length12 == "----")) \
+                        or (order_quantity13 > 0 and (type_grade13 == "----" or size13 == "----" or length13 == "----")) \
+                        or (order_quantity14 > 0 and (type_grade14 == "----" or size14 == "----" or length14 == "----")) \
+                        or (order_quantity15 > 0 and (type_grade15 == "----" or size15 == "----" or length15 == "----")) \
+                        or (order_quantity16 > 0 and (type_grade16 == "----" or size16 == "----" or length16 == "----")) \
+                        or (order_quantity17 > 0 and (type_grade17 == "----" or size17 == "----" or length17 == "----")) \
+                        or (order_quantity18 > 0 and (type_grade18 == "----" or size18 == "----" or length18 == "----")) \
+                        or (order_quantity19 > 0 and (type_grade19 == "----" or size19 == "----" or length19 == "----")) \
+                        or (order_quantity20 > 0 and (type_grade20 == "----" or size20 == "----" or length20 == "----")):
 
                 messages.info(request,
                               'All orders with quantity greater than 0 must be associated with a product.',
@@ -164,8 +261,107 @@ def purchase_order_func(request):
                     'form': form,
                 }
                 return render(request, 'inventory_management/purchase_order.html', context)
+
+
+            elif product1_db == False or product2_db == False or product3_db == False or product4_db == False or \
+                product5_db == False or product6_db == False or product7_db == False or product8_db == False or \
+                product9_db == False or product10_db == False or product11_db == False or product12_db == False or \
+                product13_db == False or product14_db == False or product15_db == False or product16_db == False or \
+                product17_db == False or product18_db == False or product19_db == False or product20_db == False:
+                if product1_db == False:
+                    messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product1),
+                                  extra_tags='exist1')
+                if product2_db == False:
+                    messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product2),
+                                  extra_tags='exist2')
+                if product3_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product3),
+                                  extra_tags='exist3')
+                if product4_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product4),
+                                  extra_tags='exist4')
+                if product5_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product5),
+                                  extra_tags='exist5')
+                if product6_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product6),
+                                  extra_tags='exist6')
+                if product7_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product7),
+                                  extra_tags='exist7')
+                if product8_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product8),
+                                  extra_tags='exist8')
+                if product9_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product9),
+                                  extra_tags='exist9')
+                if product10_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product10),
+                                  extra_tags='exist_10')
+                if product11_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product11),
+                                  extra_tags='exist_11')
+                if product12_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product12),
+                                  extra_tags='exist_12')
+                if product13_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product13),
+                                  extra_tags='exist_13')
+                if product14_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product14),
+                                  extra_tags='exist_14')
+                if product15_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product15),
+                                  extra_tags='exist_15')
+                if product16_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product16),
+                                  extra_tags='exist_16')
+                if product17_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product17),
+                                  extra_tags='exist_17')
+                if product18_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product18),
+                                  extra_tags='exist_18')
+                if product19_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product19),
+                                  extra_tags='exist_19')
+                if product20_db == False:
+                   messages.info(request,'Product "{0}" does not exist. Contact administrator to add product to inventory.'.format(
+                                      unique_product20),
+                                  extra_tags='exist_20')
+                context = {
+                    'form': form,
+                }
+                return render(request, 'inventory_management/purchase_order.html', context)
+
             else:
-                print(unique_product2)
+                if unique_product1 == "---- | ---- | ----":
+                    unique_product1 = None
+                    order_quantity1 = None
+                else:
+                    product1_db = product.objects.get(unique_product=unique_product1)
+                    product1_db.total_quantity = F('total_quantity') + order_quantity1
+                    product1_db.save()
+
                 if unique_product2 == "---- | ---- | ----":
                     unique_product2= None
                     order_quantity2= None
@@ -176,211 +372,211 @@ def purchase_order_func(request):
                     product2_db.total_quantity = F('total_quantity') + order_quantity2
                     product2_db.save()
 
-            if unique_product3 == "---- | ---- | ----":
-                unique_product3= None
-                order_quantity3= None
-            else:
-                unique_product3 = unique_product3
-                order_quantity3 = form.cleaned_data['order_quantity3']
-                product3_db = product.objects.get(unique_product=unique_product3)
-                product3_db.total_quantity = F('total_quantity') + order_quantity3
-                product3_db.save()
+                if unique_product3 == "---- | ---- | ----":
+                    unique_product3= None
+                    order_quantity3= None
+                else:
+                    unique_product3 = unique_product3
+                    order_quantity3 = form.cleaned_data['order_quantity3']
+                    product3_db = product.objects.get(unique_product=unique_product3)
+                    product3_db.total_quantity = F('total_quantity') + order_quantity3
+                    product3_db.save()
 
-            if unique_product4 == "---- | ---- | ----":
-                unique_product4= None
-                order_quantity4= None
-            else:
-                unique_product4 = unique_product4
-                order_quantity4 = form.cleaned_data['order_quantity4']
-                product4_db = product.objects.get(unique_product=unique_product4)
-                product4_db.total_quantity = F('total_quantity') + order_quantity4
-                product4_db.save()
+                if unique_product4 == "---- | ---- | ----":
+                    unique_product4= None
+                    order_quantity4= None
+                else:
+                    unique_product4 = unique_product4
+                    order_quantity4 = form.cleaned_data['order_quantity4']
+                    product4_db = product.objects.get(unique_product=unique_product4)
+                    product4_db.total_quantity = F('total_quantity') + order_quantity4
+                    product4_db.save()
 
-            if unique_product5 == "---- | ---- | ----":
-                unique_product5= None
-                order_quantity5= None
-            else:
-                unique_product5 = unique_product5
-                order_quantity5 = form.cleaned_data['order_quantity5']
-                product5_db = product.objects.get(unique_product=unique_product5)
-                product5_db.total_quantity = F('total_quantity') + order_quantity5
-                product5_db.save()
+                if unique_product5 == "---- | ---- | ----":
+                    unique_product5= None
+                    order_quantity5= None
+                else:
+                    unique_product5 = unique_product5
+                    order_quantity5 = form.cleaned_data['order_quantity5']
+                    product5_db = product.objects.get(unique_product=unique_product5)
+                    product5_db.total_quantity = F('total_quantity') + order_quantity5
+                    product5_db.save()
 
-            if unique_product6 == "---- | ---- | ----":
-                unique_product6= None
-                order_quantity6= None
-            else:
-                unique_product6 = unique_product6
-                order_quantity6 = form.cleaned_data['order_quantity6']
-                product6_db = product.objects.get(unique_product=unique_product6)
-                product6_db.total_quantity = F('total_quantity') + order_quantity6
-                product6_db.save()
+                if unique_product6 == "---- | ---- | ----":
+                    unique_product6= None
+                    order_quantity6= None
+                else:
+                    unique_product6 = unique_product6
+                    order_quantity6 = form.cleaned_data['order_quantity6']
+                    product6_db = product.objects.get(unique_product=unique_product6)
+                    product6_db.total_quantity = F('total_quantity') + order_quantity6
+                    product6_db.save()
 
-            if unique_product7 == "---- | ---- | ----":
-                unique_product7= None
-                order_quantity7= None
-            else:
-                unique_product7 = unique_product7
-                order_quantity7 = form.cleaned_data['order_quantity7']
-                product7_db = product.objects.get(unique_product=unique_product7)
-                product7_db.total_quantity = F('total_quantity') + order_quantity7
-                product7_db.save()
+                if unique_product7 == "---- | ---- | ----":
+                    unique_product7= None
+                    order_quantity7= None
+                else:
+                    unique_product7 = unique_product7
+                    order_quantity7 = form.cleaned_data['order_quantity7']
+                    product7_db = product.objects.get(unique_product=unique_product7)
+                    product7_db.total_quantity = F('total_quantity') + order_quantity7
+                    product7_db.save()
 
-            if unique_product8 == "---- | ---- | ----":
-                unique_product8= None
-                order_quantity8= None
-            else:
-                unique_product8 = unique_product8
-                order_quantity8 = form.cleaned_data['order_quantity8']
-                product8_db = product.objects.get(unique_product=unique_product8)
-                product8_db.total_quantity = F('total_quantity') + order_quantity8
-                product8_db.save()
+                if unique_product8 == "---- | ---- | ----":
+                    unique_product8= None
+                    order_quantity8= None
+                else:
+                    unique_product8 = unique_product8
+                    order_quantity8 = form.cleaned_data['order_quantity8']
+                    product8_db = product.objects.get(unique_product=unique_product8)
+                    product8_db.total_quantity = F('total_quantity') + order_quantity8
+                    product8_db.save()
 
-            if unique_product9 == "---- | ---- | ----":
-                unique_product9= None
-                order_quantity9= None
-            else:
-                unique_product9 = unique_product9
-                order_quantity9 = form.cleaned_data['order_quantity9']
-                product9_db = product.objects.get(unique_product=unique_product9)
-                product9_db.total_quantity = F('total_quantity') + order_quantity9
-                product9_db.save()
+                if unique_product9 == "---- | ---- | ----":
+                    unique_product9= None
+                    order_quantity9= None
+                else:
+                    unique_product9 = unique_product9
+                    order_quantity9 = form.cleaned_data['order_quantity9']
+                    product9_db = product.objects.get(unique_product=unique_product9)
+                    product9_db.total_quantity = F('total_quantity') + order_quantity9
+                    product9_db.save()
 
-            if unique_product10 == "---- | ---- | ----":
-                unique_product10= None
-                order_quantity10= None
-            else:
-                unique_product10 = unique_product10
-                order_quantity10 = form.cleaned_data['order_quantity10']
-                product10_db = product.objects.get(unique_product=unique_product10)
-                product10_db.total_quantity = F('total_quantity') + order_quantity10
-                product10_db.save()
+                if unique_product10 == "---- | ---- | ----":
+                    unique_product10= None
+                    order_quantity10= None
+                else:
+                    unique_product10 = unique_product10
+                    order_quantity10 = form.cleaned_data['order_quantity10']
+                    product10_db = product.objects.get(unique_product=unique_product10)
+                    product10_db.total_quantity = F('total_quantity') + order_quantity10
+                    product10_db.save()
 
-            if unique_product11 == "---- | ---- | ----":
-                unique_product11= None
-                order_quantity11= None
-            else:
-                unique_product11 = unique_product11
-                order_quantity11 = form.cleaned_data['order_quantity11']
-                product11_db = product.objects.get(unique_product=unique_product11)
-                product11_db.total_quantity = F('total_quantity') + order_quantity11
-                product11_db.save()
+                if unique_product11 == "---- | ---- | ----":
+                    unique_product11= None
+                    order_quantity11= None
+                else:
+                    unique_product11 = unique_product11
+                    order_quantity11 = form.cleaned_data['order_quantity11']
+                    product11_db = product.objects.get(unique_product=unique_product11)
+                    product11_db.total_quantity = F('total_quantity') + order_quantity11
+                    product11_db.save()
 
-            if unique_product12 == "---- | ---- | ----":
-                unique_product12= None
-                order_quantity12= None
-            else:
-                unique_product12 = unique_product12
-                order_quantity12 = form.cleaned_data['order_quantity12']
-                product12_db = product.objects.get(unique_product=unique_product12)
-                product12_db.total_quantity = F('total_quantity') + order_quantity12
-                product12_db.save()
+                if unique_product12 == "---- | ---- | ----":
+                    unique_product12= None
+                    order_quantity12= None
+                else:
+                    unique_product12 = unique_product12
+                    order_quantity12 = form.cleaned_data['order_quantity12']
+                    product12_db = product.objects.get(unique_product=unique_product12)
+                    product12_db.total_quantity = F('total_quantity') + order_quantity12
+                    product12_db.save()
 
-            if unique_product13 == "---- | ---- | ----":
-                unique_product13= None
-                order_quantity13= None
-            else:
-                unique_product13 = unique_product13
-                order_quantity13 = form.cleaned_data['order_quantity13']
-                product13_db = product.objects.get(unique_product=unique_product13)
-                product13_db.total_quantity = F('total_quantity') + order_quantity13
-                product13_db.save()
+                if unique_product13 == "---- | ---- | ----":
+                    unique_product13= None
+                    order_quantity13= None
+                else:
+                    unique_product13 = unique_product13
+                    order_quantity13 = form.cleaned_data['order_quantity13']
+                    product13_db = product.objects.get(unique_product=unique_product13)
+                    product13_db.total_quantity = F('total_quantity') + order_quantity13
+                    product13_db.save()
 
-            if unique_product14 == "---- | ---- | ----":
-                unique_product14= None
-                order_quantity14= None
-            else:
-                unique_product14 = unique_product14
-                order_quantity14 = form.cleaned_data['order_quantity14']
-                product14_db = product.objects.get(unique_product=unique_product14)
-                product14_db.total_quantity = F('total_quantity') + order_quantity14
-                product14_db.save()
+                if unique_product14 == "---- | ---- | ----":
+                    unique_product14= None
+                    order_quantity14= None
+                else:
+                    unique_product14 = unique_product14
+                    order_quantity14 = form.cleaned_data['order_quantity14']
+                    product14_db = product.objects.get(unique_product=unique_product14)
+                    product14_db.total_quantity = F('total_quantity') + order_quantity14
+                    product14_db.save()
 
-            if unique_product15 == "---- | ---- | ----":
-                unique_product15= None
-                order_quantity15= None
-            else:
-                unique_product15 = unique_product15
-                order_quantity15 = form.cleaned_data['order_quantity15']
-                product15_db = product.objects.get(unique_product=unique_product15)
-                product15_db.total_quantity = F('total_quantity') + order_quantity15
-                product15_db.save()
+                if unique_product15 == "---- | ---- | ----":
+                    unique_product15= None
+                    order_quantity15= None
+                else:
+                    unique_product15 = unique_product15
+                    order_quantity15 = form.cleaned_data['order_quantity15']
+                    product15_db = product.objects.get(unique_product=unique_product15)
+                    product15_db.total_quantity = F('total_quantity') + order_quantity15
+                    product15_db.save()
 
-            if unique_product16 == "---- | ---- | ----":
-                unique_product16= None
-                order_quantity16= None
-            else:
-                unique_product16 = unique_product16
-                order_quantity16 = form.cleaned_data['order_quantity16']
-                product16_db = product.objects.get(unique_product=unique_product16)
-                product16_db.total_quantity = F('total_quantity') + order_quantity16
-                product16_db.save()
+                if unique_product16 == "---- | ---- | ----":
+                    unique_product16= None
+                    order_quantity16= None
+                else:
+                    unique_product16 = unique_product16
+                    order_quantity16 = form.cleaned_data['order_quantity16']
+                    product16_db = product.objects.get(unique_product=unique_product16)
+                    product16_db.total_quantity = F('total_quantity') + order_quantity16
+                    product16_db.save()
 
-            if unique_product17 == "---- | ---- | ----":
-                unique_product17= None
-                order_quantity17= None
-            else:
-                unique_product17 = unique_product17
-                order_quantity17 = form.cleaned_data['order_quantity17']
-                product17_db = product.objects.get(unique_product=unique_product17)
-                product17_db.total_quantity = F('total_quantity') + order_quantity17
-                product17_db.save()
+                if unique_product17 == "---- | ---- | ----":
+                    unique_product17= None
+                    order_quantity17= None
+                else:
+                    unique_product17 = unique_product17
+                    order_quantity17 = form.cleaned_data['order_quantity17']
+                    product17_db = product.objects.get(unique_product=unique_product17)
+                    product17_db.total_quantity = F('total_quantity') + order_quantity17
+                    product17_db.save()
 
-            if unique_product18 == "---- | ---- | ----":
-                unique_product18= None
-                order_quantity18= None
-            else:
-                unique_product18 = unique_product18
-                order_quantity18 = form.cleaned_data['order_quantity18']
-                product18_db = product.objects.get(unique_product=unique_product18)
-                product18_db.total_quantity = F('total_quantity') + order_quantity18
-                product18_db.save()
+                if unique_product18 == "---- | ---- | ----":
+                    unique_product18= None
+                    order_quantity18= None
+                else:
+                    unique_product18 = unique_product18
+                    order_quantity18 = form.cleaned_data['order_quantity18']
+                    product18_db = product.objects.get(unique_product=unique_product18)
+                    product18_db.total_quantity = F('total_quantity') + order_quantity18
+                    product18_db.save()
 
-            if unique_product19 == "---- | ---- | ----":
-                unique_product19= None
-                order_quantity19= None
-            else:
-                unique_product19 = unique_product19
-                order_quantity19 = form.cleaned_data['order_quantity19']
-                product19_db = product.objects.get(unique_product=unique_product19)
-                product19_db.total_quantity = F('total_quantity') + order_quantity19
-                product19_db.save()
+                if unique_product19 == "---- | ---- | ----":
+                    unique_product19= None
+                    order_quantity19= None
+                else:
+                    unique_product19 = unique_product19
+                    order_quantity19 = form.cleaned_data['order_quantity19']
+                    product19_db = product.objects.get(unique_product=unique_product19)
+                    product19_db.total_quantity = F('total_quantity') + order_quantity19
+                    product19_db.save()
 
-            if unique_product20 == "---- | ---- | ----":
-                unique_product20= None
-                order_quantity20= None
-            else:
-                unique_product20 = unique_product20
-                order_quantity20 = form.cleaned_data['order_quantity20']
-                product20_db = product.objects.get(unique_product=unique_product20)
-                product20_db.total_quantity = F('total_quantity') + order_quantity20
-                product20_db.save()
+                if unique_product20 == "---- | ---- | ----":
+                    unique_product20= None
+                    order_quantity20= None
+                else:
+                    unique_product20 = unique_product20
+                    order_quantity20 = form.cleaned_data['order_quantity20']
+                    product20_db = product.objects.get(unique_product=unique_product20)
+                    product20_db.total_quantity = F('total_quantity') + order_quantity20
+                    product20_db.save()
 
 
-            db_insert = purchase_order_model(company=company, address=address, phone=phone, email=email, date=date,
-                                       unique_product1=unique_product1, order_quantity1=order_quantity1,
-                                       unique_product2=unique_product2, order_quantity2=order_quantity2,
-                                       unique_product3=unique_product3, order_quantity3=order_quantity3,
-                                       unique_product4=unique_product4, order_quantity4=order_quantity4,
-                                       unique_product5=unique_product5, order_quantity5=order_quantity5,
-                                       unique_product6=unique_product6, order_quantity6=order_quantity6,
-                                       unique_product7=unique_product7, order_quantity7=order_quantity7,
-                                       unique_product8=unique_product8, order_quantity8=order_quantity8,
-                                       unique_product9=unique_product9, order_quantity9=order_quantity9,
-                                       unique_product10=unique_product10, order_quantity10=order_quantity10,
-                                       unique_product11=unique_product11, order_quantity11=order_quantity11,
-                                       unique_product12=unique_product12, order_quantity12=order_quantity12,
-                                       unique_product13=unique_product13, order_quantity13=order_quantity13,
-                                       unique_product14=unique_product14, order_quantity14=order_quantity14,
-                                       unique_product15=unique_product15, order_quantity15=order_quantity15,
-                                       unique_product16=unique_product16, order_quantity16=order_quantity16,
-                                       unique_product17=unique_product17, order_quantity17=order_quantity17,
-                                       unique_product18=unique_product18, order_quantity18=order_quantity18,
-                                       unique_product19=unique_product19, order_quantity19=order_quantity19,
-                                       unique_product20=unique_product20, order_quantity20=order_quantity20, created_by = request.user.username,)
-            db_insert.save()
+                db_insert = purchase_order_model(company=company, address=address, phone=phone, email=email, date=date,
+                                           unique_product1=unique_product1, order_quantity1=order_quantity1,
+                                           unique_product2=unique_product2, order_quantity2=order_quantity2,
+                                           unique_product3=unique_product3, order_quantity3=order_quantity3,
+                                           unique_product4=unique_product4, order_quantity4=order_quantity4,
+                                           unique_product5=unique_product5, order_quantity5=order_quantity5,
+                                           unique_product6=unique_product6, order_quantity6=order_quantity6,
+                                           unique_product7=unique_product7, order_quantity7=order_quantity7,
+                                           unique_product8=unique_product8, order_quantity8=order_quantity8,
+                                           unique_product9=unique_product9, order_quantity9=order_quantity9,
+                                           unique_product10=unique_product10, order_quantity10=order_quantity10,
+                                           unique_product11=unique_product11, order_quantity11=order_quantity11,
+                                           unique_product12=unique_product12, order_quantity12=order_quantity12,
+                                           unique_product13=unique_product13, order_quantity13=order_quantity13,
+                                           unique_product14=unique_product14, order_quantity14=order_quantity14,
+                                           unique_product15=unique_product15, order_quantity15=order_quantity15,
+                                           unique_product16=unique_product16, order_quantity16=order_quantity16,
+                                           unique_product17=unique_product17, order_quantity17=order_quantity17,
+                                           unique_product18=unique_product18, order_quantity18=order_quantity18,
+                                           unique_product19=unique_product19, order_quantity19=order_quantity19,
+                                           unique_product20=unique_product20, order_quantity20=order_quantity20, created_by = request.user.username,)
+                db_insert.save()
 
-        return redirect('inventory_management')
+                return redirect('inventory_management')
 
 
     form = POForm()
@@ -493,32 +689,265 @@ def sales_order(request):
             date = form.cleaned_data['date']
             override = form.cleaned_data['override']
 
-            so_unique_product1 = form.cleaned_data['so_unique_product1']
-            so_order_quantity1 = form.cleaned_data['so_order_quantity1']
-            unique_product1 = form.cleaned_data['unique_product1']
+            type_grade1 = form.cleaned_data['type_grade1']
+            size1 = form.cleaned_data['size1']
+            length1 = form.cleaned_data['length1']
+            unique_product1 = '{0} | {1} | {2}'.format(type_grade1, size1, length1)
             order_quantity1 = form.cleaned_data['order_quantity1']
 
-            total_quantity1 = product.objects.get(unique_product=unique_product1)
-            total_quantity1 = total_quantity1.total_quantity
-            total_quantity1 = total_quantity1 - order_quantity1
+            so_type_grade1 = form.cleaned_data['so_type_grade1']
+            so_size1 = form.cleaned_data['so_size1']
+            so_length1 = form.cleaned_data['so_length1']
+            so_unique_product1 = '{0} | {1} | {2}'.format(so_type_grade1, so_size1, so_length1)
+            so_order_quantity1 = form.cleaned_data['so_order_quantity1']
 
-            if (form.cleaned_data['so_unique_product1'] == None and form.cleaned_data['so_order_quantity1'] >0)\
-                    or (form.cleaned_data['unique_product1'] == None and form.cleaned_data['order_quantity1'] >0)\
-                    or (form.cleaned_data['so_order_quantity1'] == 0 and form.cleaned_data['order_quantity1'] >0)\
-                    or (form.cleaned_data['so_order_quantity1'] >0 and form.cleaned_data['order_quantity1'] == 0) \
-                    or (form.cleaned_data['so_unique_product1'] == None and form.cleaned_data['unique_product1'] != None) \
-                    or (form.cleaned_data['so_unique_product1'] != None and form.cleaned_data['unique_product1'] == None) \
-                    or (form.cleaned_data['so_unique_product2'] == None and form.cleaned_data['so_order_quantity2'] >0)\
-                    or (form.cleaned_data['unique_product2'] == None and form.cleaned_data['order_quantity2'] >0)\
-                    or (form.cleaned_data['so_order_quantity2'] == 0 and form.cleaned_data['order_quantity2'] >0)\
-                    or (form.cleaned_data['so_order_quantity2'] >0 and form.cleaned_data['order_quantity2'] == 0) \
-                    or (form.cleaned_data['so_unique_product2'] == None and form.cleaned_data['unique_product2'] != None) \
-                    or (form.cleaned_data['so_unique_product2'] != None and form.cleaned_data['unique_product2'] == None) \
-                    or (form.cleaned_data['so_unique_product3'] == None and form.cleaned_data['so_order_quantity3'] > 0) \
-                    or (form.cleaned_data['unique_product3'] == None and form.cleaned_data['order_quantity3'] > 0) \
-                    or (form.cleaned_data['so_order_quantity3'] == 0 and form.cleaned_data['order_quantity3'] > 0) \
-                    or (form.cleaned_data['so_order_quantity3'] > 0 and form.cleaned_data['order_quantity3'] == 0) \
-                    or (form.cleaned_data['so_unique_product3'] == None and form.cleaned_data['unique_product3'] != None) \
+            type_grade2 = form.cleaned_data['type_grade2']
+            size2 = form.cleaned_data['size2']
+            length2 = form.cleaned_data['length2']
+            unique_product2 = '{0} | {1} | {2}'.format(type_grade2, size2, length2)
+            order_quantity2 = form.cleaned_data['order_quantity2']
+
+            so_type_grade2 = form.cleaned_data['so_type_grade2']
+            so_size2 = form.cleaned_data['so_size2']
+            so_length2 = form.cleaned_data['so_length2']
+            so_unique_product2 = '{0} | {1} | {2}'.format(so_type_grade2, so_size2, so_length2)
+            so_order_quantity2 = form.cleaned_data['so_order_quantity2']
+
+            type_grade3 = form.cleaned_data['type_grade3']
+            size3 = form.cleaned_data['size3']
+            length3 = form.cleaned_data['length3']
+            unique_product3 = '{0} | {1} | {2}'.format(type_grade3, size3, length3)
+            order_quantity3 = form.cleaned_data['order_quantity3']
+
+            so_type_grade3 = form.cleaned_data['so_type_grade3']
+            so_size3 = form.cleaned_data['so_size3']
+            so_length3 = form.cleaned_data['so_length3']
+            so_unique_product3 = '{0} | {1} | {2}'.format(so_type_grade3, so_size3, so_length3)
+            so_order_quantity3 = form.cleaned_data['so_order_quantity3']
+
+            type_grade4 = form.cleaned_data['type_grade4']
+            size4 = form.cleaned_data['size4']
+            length4 = form.cleaned_data['length4']
+            unique_product4 = '{0} | {1} | {2}'.format(type_grade4, size4, length4)
+            order_quantity4 = form.cleaned_data['order_quantity4']
+
+            so_type_grade4 = form.cleaned_data['so_type_grade4']
+            so_size4 = form.cleaned_data['so_size4']
+            so_length4 = form.cleaned_data['so_length4']
+            so_unique_product4 = '{0} | {1} | {2}'.format(so_type_grade4, so_size4, so_length4)
+            so_order_quantity4 = form.cleaned_data['so_order_quantity4']
+
+            type_grade5 = form.cleaned_data['type_grade5']
+            size5 = form.cleaned_data['size5']
+            length5 = form.cleaned_data['length5']
+            unique_product5 = '{0} | {1} | {2}'.format(type_grade5, size5, length5)
+            order_quantity5 = form.cleaned_data['order_quantity5']
+
+            so_type_grade5 = form.cleaned_data['so_type_grade5']
+            so_size5 = form.cleaned_data['so_size5']
+            so_length5 = form.cleaned_data['so_length5']
+            so_unique_product5 = '{0} | {1} | {2}'.format(so_type_grade5, so_size5, so_length5)
+            so_order_quantity5 = form.cleaned_data['so_order_quantity5']
+
+            type_grade6 = form.cleaned_data['type_grade6']
+            size6 = form.cleaned_data['size6']
+            length6 = form.cleaned_data['length6']
+            unique_product6 = '{0} | {1} | {2}'.format(type_grade6, size6, length6)
+            order_quantity6 = form.cleaned_data['order_quantity6']
+
+            so_type_grade6 = form.cleaned_data['so_type_grade6']
+            so_size6 = form.cleaned_data['so_size6']
+            so_length6 = form.cleaned_data['so_length6']
+            so_unique_product6 = '{0} | {1} | {2}'.format(so_type_grade6, so_size6, so_length6)
+            so_order_quantity6 = form.cleaned_data['so_order_quantity6']
+
+            type_grade7 = form.cleaned_data['type_grade7']
+            size7 = form.cleaned_data['size7']
+            length7 = form.cleaned_data['length7']
+            unique_product7 = '{0} | {1} | {2}'.format(type_grade7, size7, length7)
+            order_quantity7 = form.cleaned_data['order_quantity7']
+
+            so_type_grade7 = form.cleaned_data['so_type_grade7']
+            so_size7 = form.cleaned_data['so_size7']
+            so_length7 = form.cleaned_data['so_length7']
+            so_unique_product7 = '{0} | {1} | {2}'.format(so_type_grade7, so_size7, so_length7)
+            so_order_quantity7 = form.cleaned_data['so_order_quantity7']
+
+            type_grade8 = form.cleaned_data['type_grade8']
+            size8 = form.cleaned_data['size8']
+            length8 = form.cleaned_data['length8']
+            unique_product8 = '{0} | {1} | {2}'.format(type_grade8, size8, length8)
+            order_quantity8 = form.cleaned_data['order_quantity8']
+
+            so_type_grade8 = form.cleaned_data['so_type_grade8']
+            so_size8 = form.cleaned_data['so_size8']
+            so_length8 = form.cleaned_data['so_length8']
+            so_unique_product8 = '{0} | {1} | {2}'.format(so_type_grade8, so_size8, so_length8)
+            so_order_quantity8 = form.cleaned_data['so_order_quantity8']
+
+            type_grade9 = form.cleaned_data['type_grade9']
+            size9 = form.cleaned_data['size9']
+            length9 = form.cleaned_data['length9']
+            unique_product9 = '{0} | {1} | {2}'.format(type_grade9, size9, length9)
+            order_quantity9 = form.cleaned_data['order_quantity9']
+
+            so_type_grade9 = form.cleaned_data['so_type_grade9']
+            so_size9 = form.cleaned_data['so_size9']
+            so_length9 = form.cleaned_data['so_length9']
+            so_unique_product9 = '{0} | {1} | {2}'.format(so_type_grade9, so_size9, so_length9)
+            so_order_quantity9 = form.cleaned_data['so_order_quantity9']
+
+            type_grade10 = form.cleaned_data['type_grade10']
+            size10 = form.cleaned_data['size10']
+            length10 = form.cleaned_data['length10']
+            unique_product10 = '{0} | {1} | {2}'.format(type_grade10, size10, length10)
+            order_quantity10 = form.cleaned_data['order_quantity10']
+
+            so_type_grade10 = form.cleaned_data['so_type_grade10']
+            so_size10 = form.cleaned_data['so_size10']
+            so_length10 = form.cleaned_data['so_length10']
+            so_unique_product10 = '{0} | {1} | {2}'.format(so_type_grade10, so_size10, so_length10)
+            so_order_quantity10 = form.cleaned_data['so_order_quantity10']
+
+            type_grade11 = form.cleaned_data['type_grade11']
+            size11 = form.cleaned_data['size11']
+            length11 = form.cleaned_data['length11']
+            unique_product11 = '{0} | {1} | {2}'.format(type_grade11, size11, length11)
+            order_quantity11 = form.cleaned_data['order_quantity11']
+
+            so_type_grade11 = form.cleaned_data['so_type_grade11']
+            so_size11 = form.cleaned_data['so_size11']
+            so_length11 = form.cleaned_data['so_length11']
+            so_unique_product11 = '{0} | {1} | {2}'.format(so_type_grade11, so_size11, so_length11)
+            so_order_quantity11 = form.cleaned_data['so_order_quantity11']
+
+            type_grade12 = form.cleaned_data['type_grade12']
+            size12 = form.cleaned_data['size12']
+            length12 = form.cleaned_data['length12']
+            unique_product12 = '{0} | {1} | {2}'.format(type_grade12, size12, length12)
+            order_quantity12 = form.cleaned_data['order_quantity12']
+
+            so_type_grade12 = form.cleaned_data['so_type_grade12']
+            so_size12 = form.cleaned_data['so_size12']
+            so_length12 = form.cleaned_data['so_length12']
+            so_unique_product12 = '{0} | {1} | {2}'.format(so_type_grade12, so_size12, so_length12)
+            so_order_quantity12 = form.cleaned_data['so_order_quantity12']
+
+            type_grade13 = form.cleaned_data['type_grade13']
+            size13 = form.cleaned_data['size13']
+            length13 = form.cleaned_data['length13']
+            unique_product13 = '{0} | {1} | {2}'.format(type_grade13, size13, length13)
+            order_quantity13 = form.cleaned_data['order_quantity13']
+
+            so_type_grade13 = form.cleaned_data['so_type_grade13']
+            so_size13 = form.cleaned_data['so_size13']
+            so_length13 = form.cleaned_data['so_length13']
+            so_unique_product13 = '{0} | {1} | {2}'.format(so_type_grade13, so_size13, so_length13)
+            so_order_quantity13 = form.cleaned_data['so_order_quantity13']
+
+            type_grade14 = form.cleaned_data['type_grade14']
+            size14 = form.cleaned_data['size14']
+            length14 = form.cleaned_data['length14']
+            unique_product14 = '{0} | {1} | {2}'.format(type_grade14, size14, length14)
+            order_quantity14 = form.cleaned_data['order_quantity14']
+
+            so_type_grade14 = form.cleaned_data['so_type_grade14']
+            so_size14 = form.cleaned_data['so_size14']
+            so_length14 = form.cleaned_data['so_length14']
+            so_unique_product14 = '{0} | {1} | {2}'.format(so_type_grade14, so_size14, so_length14)
+            so_order_quantity14 = form.cleaned_data['so_order_quantity14']
+
+            type_grade15 = form.cleaned_data['type_grade15']
+            size15 = form.cleaned_data['size15']
+            length15 = form.cleaned_data['length15']
+            unique_product15 = '{0} | {1} | {2}'.format(type_grade15, size15, length15)
+            order_quantity15 = form.cleaned_data['order_quantity15']
+
+            so_type_grade15 = form.cleaned_data['so_type_grade15']
+            so_size15 = form.cleaned_data['so_size15']
+            so_length15 = form.cleaned_data['so_length15']
+            so_unique_product15 = '{0} | {1} | {2}'.format(so_type_grade15, so_size15, so_length15)
+            so_order_quantity15 = form.cleaned_data['so_order_quantity15']
+
+            type_grade16 = form.cleaned_data['type_grade16']
+            size16 = form.cleaned_data['size16']
+            length16 = form.cleaned_data['length16']
+            unique_product16 = '{0} | {1} | {2}'.format(type_grade16, size16, length16)
+            order_quantity16 = form.cleaned_data['order_quantity16']
+
+            so_type_grade16 = form.cleaned_data['so_type_grade16']
+            so_size16 = form.cleaned_data['so_size16']
+            so_length16 = form.cleaned_data['so_length16']
+            so_unique_product16 = '{0} | {1} | {2}'.format(so_type_grade16, so_size16, so_length16)
+            so_order_quantity16 = form.cleaned_data['so_order_quantity16']
+
+            type_grade17 = form.cleaned_data['type_grade17']
+            size17 = form.cleaned_data['size17']
+            length17 = form.cleaned_data['length17']
+            unique_product17 = '{0} | {1} | {2}'.format(type_grade17, size17, length17)
+            order_quantity17 = form.cleaned_data['order_quantity17']
+
+            so_type_grade17 = form.cleaned_data['so_type_grade17']
+            so_size17 = form.cleaned_data['so_size17']
+            so_length17 = form.cleaned_data['so_length17']
+            so_unique_product17 = '{0} | {1} | {2}'.format(so_type_grade17, so_size17, so_length17)
+            so_order_quantity17 = form.cleaned_data['so_order_quantity17']
+
+            type_grade18 = form.cleaned_data['type_grade18']
+            size18 = form.cleaned_data['size18']
+            length18 = form.cleaned_data['length18']
+            unique_product18 = '{0} | {1} | {2}'.format(type_grade18, size18, length18)
+            order_quantity18 = form.cleaned_data['order_quantity18']
+
+            so_type_grade18 = form.cleaned_data['so_type_grade18']
+            so_size18 = form.cleaned_data['so_size18']
+            so_length18 = form.cleaned_data['so_length18']
+            so_unique_product18 = '{0} | {1} | {2}'.format(so_type_grade18, so_size18, so_length18)
+            so_order_quantity18 = form.cleaned_data['so_order_quantity18']
+
+            type_grade19 = form.cleaned_data['type_grade19']
+            size19 = form.cleaned_data['size19']
+            length19 = form.cleaned_data['length19']
+            unique_product19 = '{0} | {1} | {2}'.format(type_grade19, size19, length19)
+            order_quantity19 = form.cleaned_data['order_quantity19']
+
+            so_type_grade19 = form.cleaned_data['so_type_grade19']
+            so_size19 = form.cleaned_data['so_size19']
+            so_length19 = form.cleaned_data['so_length19']
+            so_unique_product19 = '{0} | {1} | {2}'.format(so_type_grade19, so_size19, so_length19)
+            so_order_quantity19 = form.cleaned_data['so_order_quantity19']
+
+            type_grade20 = form.cleaned_data['type_grade20']
+            size20 = form.cleaned_data['size20']
+            length20 = form.cleaned_data['length20']
+            unique_product20 = '{0} | {1} | {2}'.format(type_grade20, size20, length20)
+            order_quantity20 = form.cleaned_data['order_quantity20']
+
+            so_type_grade20 = form.cleaned_data['so_type_grade20']
+            so_size20 = form.cleaned_data['so_size20']
+            so_length20 = form.cleaned_data['so_length20']
+            so_unique_product20 = '{0} | {1} | {2}'.format(so_type_grade20, so_size20, so_length20)
+            so_order_quantity20 = form.cleaned_data['so_order_quantity20']
+
+
+
+            if (so_unique_product1 == None and so_order_quantity1 >0)\
+                    or (unique_product1 == None and order_quantity1 >0)\
+                    or (so_order_quantity1 == 0 and order_quantity1 >0)\
+                    or (so_order_quantity1 >0 and order_quantity1 == 0) \
+                    or (so_unique_product1 == None and unique_product1 != None) \
+                    or (so_unique_product1 != None and unique_product1 == None) \
+                    or (so_unique_product2 == None and so_order_quantity2 >0)\
+                    or (unique_product2 == None and order_quantity2 >0)\
+                    or (so_order_quantity2 == 0 and order_quantity2 >0)\
+                    or (so_order_quantity2 >0 and order_quantity2 == 0) \
+                    or (so_unique_product2 == None and unique_product2 != None) \
+                    or (so_unique_product2 != None and unique_product2 == None) \
+                    or (so_unique_product3 == None and so_order_quantity3 > 0) \
+                    or (unique_product3 == None and order_quantity3 > 0) \
+                    or (so_order_quantity3 == 0 and order_quantity3 > 0) \
+                    or (so_order_quantity3 > 0 and order_quantity3 == 0) \
+                    or (so_unique_product3 == None and unique_product3 != None) \
                     or ( form.cleaned_data['so_unique_product3'] != None and form.cleaned_data['unique_product3'] == None) \
                     or (form.cleaned_data['so_unique_product4'] == None and form.cleaned_data['so_order_quantity4'] > 0) \
                     or (form.cleaned_data['unique_product4'] == None and form.cleaned_data['order_quantity4'] > 0) \

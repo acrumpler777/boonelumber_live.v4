@@ -75,8 +75,8 @@ class purchase_order_model(models.Model):
     email = models.EmailField('Email', blank=True, null=True)
     date = models.CharField('Date', blank=True, null=True, max_length=200)
 
-    unique_product1 = models.CharField("Unique Product #1", max_length=200)
-    order_quantity1 = models.IntegerField("Order Quantity #1")
+    unique_product1 = models.CharField("Unique Product #1", max_length=200, blank=True, null=True)
+    order_quantity1 = models.IntegerField("Order Quantity #1", blank=True, null=True)
     unique_product2 = models.CharField("Unique Product #2", max_length=200, blank=True, null=True)
     order_quantity2 = models.IntegerField("Order Quantity #2", blank=True, null=True)
     unique_product3 = models.CharField("Unique Product #3", max_length=200, blank=True, null=True)

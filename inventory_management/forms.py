@@ -190,10 +190,10 @@ class POForm(forms.Form):
     email = forms.EmailField(label='Email', required=False, widget=forms.TextInput(attrs={'class': 'form-control' }))
     date = forms.DateField(label='Date', widget=DateInput(attrs={'class': 'form-control' }), required=False)
 
-    type_grade1 = forms.ChoiceField(  choices=type_grade_choice, widget=forms.Select(attrs={'class': 'form-control'}))
+    type_grade1 = forms.ChoiceField(choices=type_grade_choice, widget=forms.Select(attrs={'class': 'form-control'}))
     size1 = forms.ChoiceField(choices=size_choices,widget=forms.Select(attrs={'class': 'form-control'}))
     length1 = forms.ChoiceField(choices=length_choices,widget=forms.Select(attrs={'class': 'form-control'}))
-    order_quantity1 = forms.IntegerField(initial=0, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    order_quantity1 = forms.IntegerField(initial=0, min_value=0, required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
 
     type_grade2 = forms.ChoiceField( choices=type_grade_choice,widget=forms.Select(attrs={'class': 'form-control'}))
     size2 = forms.ChoiceField(choices=size_choices,widget=forms.Select(attrs={'class': 'form-control'}))
