@@ -67,503 +67,663 @@
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #1:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product1 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #1:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity1 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade1 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size1 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length1 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #1:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity1 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #1:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product1 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #1:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity1 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade1 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size1 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #1:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length1 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #1:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity1 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product1" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product1" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #2:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product2 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #2:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity2 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade2 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size1 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length2 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #2:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity2 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #2:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product2 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #2:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity2 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade2 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size2 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #2:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length2 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #2:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity2 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product2" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product2" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #3:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product3 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #3:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity3 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade3 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size3 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length3 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #3:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity3 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #3:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product3 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #3:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity3 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade3 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size3 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #3:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length3 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #3:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity3 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product3" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product3" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #4:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product4 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #4:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity4 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade4 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size4 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length4 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #4:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity4 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #4:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product4 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #4:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity4 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade4 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size4 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #4:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length4 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #4:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity4 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product4" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product4" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #5:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product5 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #5:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity5 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade5 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size5 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length5 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #5:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity5 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #5:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product5 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #5:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity5 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade5 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size5 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #5:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length5 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #5:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity5 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product5" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product5" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #6:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product6 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #6:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity6 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade6 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size6 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length6 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #6:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity6 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #6:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product6 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #6:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity6 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade6 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size6 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #6:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length6 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #6:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity6 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product6" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product6" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #7:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product7 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #7:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity7 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade7 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size7 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length7 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #7:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity7 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #7:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product7 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #7:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity7 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade7 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size7 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #7:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length7 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #7:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity7 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product7" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product7" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #8:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product8 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #8:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity8 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade8 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size8 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length8 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #8:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity8 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #8:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product8 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #8:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity8 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade8 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size8 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #8:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length8 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #8:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity8 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product8" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product8" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #9:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product9 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #9:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity9 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade9 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size9 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length9 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #9:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity9 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #9:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product9 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #9:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity9 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade9 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size9 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #9:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length9 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #9:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity9 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product9" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product9" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #10:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product10 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #10:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity10 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade10 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size10 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length10 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #10:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity10 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #10:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product10 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #10:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity10 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade10 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size10 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #10:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length10 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #10:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity10 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_10" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_10" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #11:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product11 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #11:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity11 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade11 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size11 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length11 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #11:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity11 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #11:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product11 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #11:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity11 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade11 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size11 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #11:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length11 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #11:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity11 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_11" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_11" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #12:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product12 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #12:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity12 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade12 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size12 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length12 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #12:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity12 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #12:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product12 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #12:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity12 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade12 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size12 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #12:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length12 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #12:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity12 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_12" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_12" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #13:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product13 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #13:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity13 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade13 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size13 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length13 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #13:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity13 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #13:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product13 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #13:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity13 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade13 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size13 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #13:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length13 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #13:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity13 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_13" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_13" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #14:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product14 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #14:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity14 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade14 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size14 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length14 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #14:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity14 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #14:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product14 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #14:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity14 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade14 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size14 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #14:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length14 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #14:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity14 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_14" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_14" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #15:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product15 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #15:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity15 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade15 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size15 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length15 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #15:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity15 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #15:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product15 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #15:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity15 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade15 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size15 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #15:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length15 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #15:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity15 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_15" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_15" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #16:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product16 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #16:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity16 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade16 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size16 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length16 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #16:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity16 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #16:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product16 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #16:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity16 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade16 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size16 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #16:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length16 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #16:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity16 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_16" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_16" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #17:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product17 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #17:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity17 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade17 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size17 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length17 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #17:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity17 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #17:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product17 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #17:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity17 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade17 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size17 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #17:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length17 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #17:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity17 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_17" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_17" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #18:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product18 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #18:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity18 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade18 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size18 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length18 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #18:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity18 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #18:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product18 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #18:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity18 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade18 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size18 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #18:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length18 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #18:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity18 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_18" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_18" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #19:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product19 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #19:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity19 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade19 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size19 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length19 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #19:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity19 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #19:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product19 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #19:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity19 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade19 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size19 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #19:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length19 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #19:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity19 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_19" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product_19" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
         <body>
             <div style="padding-top: 13px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Product #20:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.so_unique_product20 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Quantity #20:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.so_order_quantity20 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.type_grade20 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size20 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.length20 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #20:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity20 }}</div>
                 </div>
             </div>
         </body>
         <body>
             <div style="padding-top: 5px;">
                 <div class="row">
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Product #20:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: none;padding-right: 5px;">{{ form.unique_product20 }}</div>
-                    <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Fulfillment Quantity #20:</label></div>
-                    <div class="col d-md-flex align-items-md-center" style="padding-left: 5px;min-width: none;max-width: 200px;width: auto;padding-right: 8px;">{{ form.order_quantity20 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Type | Grade #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade20 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Size #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size20 }}</div>
+                    <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">F. Length #20:</label></div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length20 }}</div>
+                    <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">F. Quantity #20:</label></div>
+                    <div class="col d-md-flex align-items-md-center" style="padding-left: 2px;min-width: none;max-width: 80px;width: auto;padding-right: 8px;">{{ form.order_quantity20 }}</div>
                 </div>
             </div>
         </body>
-            {%for message in messages %}
-                {%if "unique_product_20" in message.tags %}
-                    <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
-                {%endif%}
-            {%endfor%}
+        {%for message in messages %}
+            {%if "unique_product20" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
+            {%endif%}
+        {%endfor%}
 
 
             {% if request.method == 'POST' %}
@@ -576,10 +736,6 @@
                  </div>
              </body>
             {% endif %}
-
-
-
-
 
         <br>
         <div class="text-center">

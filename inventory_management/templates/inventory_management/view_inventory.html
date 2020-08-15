@@ -57,7 +57,7 @@
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.total_quantity|intcomma }}</td>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">{{ item.bF_Total|intcomma }}</td>
                                     <td class="text-center" style="font-size: 12px;height: 27px; width: auto;">${{ item.Total_USD|intcomma }}</td>
-                                    <td class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 12px;height: 27px;"><a class="btn btn-primary d-xl-flex justify-content-xl-center align-items-xl-center" role="button" style="height: 19px; width: 60px;font-size: 12px;background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);" href="{% url 'update_inventory_item' item.id %}">Update</a></td>
+                                    <td class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 12px;height: 27px;"><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" style="height: 19px; width: 60px;font-size: 12px;background-color: rgb(255,159,47);border-color: rgba(255,255,255,0);" href="{% url 'update_inventory_item' item.id %}">Update</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
