@@ -154,8 +154,8 @@ class sales_order_model(models.Model):
     date = models.CharField('Date', blank=True, null=True, max_length=200)
     override = models.CharField("Override", blank=True, null=True, max_length=200)
 
-    so_unique_product1 = models.CharField("Unique Product #1", max_length=200)
-    so_order_quantity1 = models.IntegerField("Order Quantity #1")
+    so_unique_product1 = models.CharField("Unique Product #1", max_length=200, blank=True, null=True)
+    so_order_quantity1 = models.IntegerField("Order Quantity #1", blank=True, null=True)
     so_unique_product2 = models.CharField("Unique Product #2", max_length=200, blank=True, null=True)
     so_order_quantity2 = models.IntegerField("Order Quantity #2", blank=True, null=True)
     so_unique_product3 = models.CharField("Unique Product #3", max_length=200, blank=True, null=True)
@@ -195,9 +195,10 @@ class sales_order_model(models.Model):
     so_unique_product20 = models.CharField("Unique Product #20", max_length=200, blank=True, null=True)
     so_order_quantity20 = models.IntegerField("Order Quantity #20", blank=True, null=True)
 
+
     # Product fulfilled to account for cut
-    unique_product1 = models.CharField("Fulfillment Product #1", max_length=200)
-    order_quantity1 = models.IntegerField("Fulfillment Quantity #1")
+    unique_product1 = models.CharField("Fulfillment Product #1", max_length=200, blank=True, null=True)
+    order_quantity1 = models.IntegerField("Fulfillment Quantity #1", blank=True, null=True)
     unique_product2 = models.CharField("Fulfillment Product #2", max_length=200, blank=True, null=True)
     order_quantity2 = models.IntegerField("Fulfillment Quantity #2", blank=True, null=True)
     unique_product3 = models.CharField("Fulfillment Product #3", max_length=200, blank=True, null=True)
@@ -236,6 +237,7 @@ class sales_order_model(models.Model):
     order_quantity19 = models.IntegerField("Fulfillment Quantity #19", blank=True, null=True)
     unique_product20 = models.CharField("Fulfillment Product #20", max_length=200, blank=True, null=True)
     order_quantity20 = models.IntegerField("Fulfillment Quantity #20", blank=True, null=True)
+
 
     date_created = models.DateTimeField(auto_now_add=True)
     created_by = models.CharField(max_length=200)

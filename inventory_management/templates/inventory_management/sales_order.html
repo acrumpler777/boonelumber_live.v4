@@ -93,7 +93,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product1" in message.tags %}
+            {% if "so_xist1" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist1" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product1" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -103,7 +109,7 @@
                     <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #2:</label></div>
                     <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade2 }}</div>
                     <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #2:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.size2 }}</div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size2 }}</div>
                     <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #2:</label></div>
                     <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length2 }}</div>
                     <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #2:</label></div>
@@ -126,7 +132,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product2" in message.tags %}
+            {% if "so_xist2" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist2" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product2" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -159,7 +171,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product3" in message.tags %}
+            {% if "so_xist3" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist3" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product3" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -192,7 +210,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product4" in message.tags %}
+            {% if "so_xist4" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist4" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product4" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -225,7 +249,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product5" in message.tags %}
+            {% if "so_xist5" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist5" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product5" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -258,7 +288,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product6" in message.tags %}
+            {% if "so_xist6" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist6" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product6" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -291,7 +327,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product7" in message.tags %}
+            {% if "so_xist7" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist7" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product7" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -324,7 +366,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product8" in message.tags %}
+            {% if "so_xist8" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist8" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product8" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -357,7 +405,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product9" in message.tags %}
+            {% if "so_xist9" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist9" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product9" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -390,7 +444,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_10" in message.tags %}
+            {% if "so_xist_10" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_10" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_10" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -423,7 +483,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_11" in message.tags %}
+            {% if "so_xist_11" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_11" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_11" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -433,7 +499,7 @@
                     <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Type | Grade #12:</label></div>
                     <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: none;padding-right: 0px;">{{ form.so_type_grade12 }}</div>
                     <div class="col" style="padding-right: 3px;width: auto;max-width: 97px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Size #12:</label></div>
-                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_so_size12 }}</div>
+                    <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 105px;padding-right: 2px;">{{ form.so_size12 }}</div>
                     <div class="col" style="padding-right: 3px;width: auto;max-width: 118px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;">Length #12:</label></div>
                     <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 88px;padding-right: 2px;">{{ form.so_length12 }}</div>
                     <div class="col" style="padding-right: 0px;width: auto;max-width: 125px;padding-left: 11px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 140px;">Quantity #12:</label></div>
@@ -456,7 +522,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_12" in message.tags %}
+            {% if "so_xist_12" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_12" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_12" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -489,7 +561,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_13" in message.tags %}
+            {% if "so_xist_13" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_13" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_13" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -522,7 +600,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_14" in message.tags %}
+            {% if "so_xist_14" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_14" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_14" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -555,7 +639,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_15" in message.tags %}
+            {% if "so_xist_15" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_15" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_15" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -588,7 +678,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_16" in message.tags %}
+            {% if "so_xist_16" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_16" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_16" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -621,7 +717,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_17" in message.tags %}
+            {% if "so_xist_17" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_17" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_17" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -654,7 +756,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_18" in message.tags %}
+            {% if "so_xist_18" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_18" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_18" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -687,7 +795,13 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product_19" in message.tags %}
+            {% if "so_xist_19" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_19" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_19" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
@@ -720,18 +834,22 @@
             </div>
         </body>
         {%for message in messages %}
-            {%if "unique_product20" in message.tags %}
+            {% if "so_xist_20" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {%endif%}
+            {% if "exist_20" in message.tags %}
+                <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,208,204);border-color: rgb(237,214,212);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(244,41,27);"><strong>Error!</strong> {{message}}</span></div>
+            {% endif %}
+            {% if "unique_product_20" in message.tags %}
                 <div role="alert" class="alert alert-success d-md-flex align-items-md-center" style="background-color: rgb(255,240,163);border-color: rgba(21,87,36,0);padding-bottom: 0px;height: auto;margin-bottom: 0px;margin-top: 5px;padding-top: 0px;"><span style="color: rgb(98,79,12);"><strong>Warning!</strong> {{message}}</span></div>
             {%endif%}
         {%endfor%}
-
-
             {% if request.method == 'POST' %}
              <body>
-                 <div style="padding-top: 13px;">
+                 <div class="text-start" style="padding-top: 13px;">
                      <div class="row">
-                         <div class="col" style="padding-right: 0px;width: auto;max-width: 195px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 195px;">Override Negative Inventory:</label></div>
-                         <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 0px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.override }}</div>
+                         <div class="col" style="padding-right: 0px;width: auto;max-width: 158px;"><label class="col-form-label d-md-flex justify-content-md-start" style="width: auto;max-width: 158px;">Override Negative Inventory:</label></div>
+                         <div class="col d-md-flex flex-grow-1 align-items-md-center" style="padding: 0px;padding-left: 2px;width: auto;max-width: 300px;padding-right: 20px;">{{ form.override }}</div>
                      </div>
                  </div>
              </body>
