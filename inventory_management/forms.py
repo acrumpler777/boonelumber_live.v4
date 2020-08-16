@@ -190,12 +190,12 @@ class POForm(forms.Form):
     email = forms.EmailField(label='Email', required=False, widget=forms.TextInput(attrs={'class': 'form-control' }))
     date = forms.DateField(label='Date', widget=DateInput(attrs={'class': 'form-control' }), required=False)
 
-    type_grade1 = forms.ChoiceField(choices=type_grade_choice, widget=forms.Select(attrs={'class': 'form-control'}))
+    type_grade1 = forms.ChoiceField(label='Type | Grade #1', choices=type_grade_choice, widget=forms.Select(attrs={'class': 'form-control'}))
     size1 = forms.ChoiceField(choices=size_choices,widget=forms.Select(attrs={'class': 'form-control'}))
     length1 = forms.ChoiceField(choices=length_choices,widget=forms.Select(attrs={'class': 'form-control'}))
-    order_quantity1 = forms.IntegerField(initial=0, min_value=0, required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    order_quantity1 = forms.IntegerField(label='Order Quantity #1', initial=0, min_value=0, required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
 
-    type_grade2 = forms.ChoiceField( choices=type_grade_choice,widget=forms.Select(attrs={'class': 'form-control'}))
+    type_grade2 = forms.ChoiceField(label='Type | Grade #2', choices=type_grade_choice,widget=forms.Select(attrs={'class': 'form-control'}))
     size2 = forms.ChoiceField(choices=size_choices,widget=forms.Select(attrs={'class': 'form-control'}))
     length2 = forms.ChoiceField(choices=length_choices,widget=forms.Select(attrs={'class': 'form-control'}))
     order_quantity2 = forms.IntegerField(label='Order Quantity #2', required=False, initial=0, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
@@ -238,7 +238,7 @@ class POForm(forms.Form):
     type_grade10 = forms.ChoiceField(label='Type | Grade #10', choices=type_grade_choice,widget=forms.Select(attrs={'class': 'form-control'}))
     size10 = forms.ChoiceField(choices=size_choices, widget=forms.Select(attrs={'class': 'form-control'}))
     length10 = forms.ChoiceField(choices=length_choices,widget=forms.Select(attrs={'class': 'form-control'}))
-    order_quantity10 = forms.IntegerField(label='Order Quantity #20', required=False, initial=0, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    order_quantity10 = forms.IntegerField(label='Order Quantity10', required=False, initial=0, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
 
     type_grade11 = forms.ChoiceField(label='Type | Grade #11', choices=type_grade_choice, widget=forms.Select(attrs={'class': 'form-control'}))
     size11 = forms.ChoiceField(choices=size_choices, widget=forms.Select(attrs={'class': 'form-control'}))
@@ -298,7 +298,7 @@ override_choices = (
 
 class inventory_adjustment_form(forms.Form):
 
-    unique_product1 = forms.ModelChoiceField(label='Product', widget=forms.Select(attrs={'class': 'form-control'}), queryset=queryset)
+    unique_product1 = forms.ModelChoiceField(label='Product', widget=forms.Select(attrs={'class': 'form-control'}),queryset=queryset)
     order_quantity1 = forms.IntegerField(label='Adjustment Quantity', initial=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
     adjustment_reason = forms.CharField(label='Reason for Adjustment', required=False, max_length=2000, widget=forms.Textarea(attrs={'class': 'form-control' }))
     override = forms.ChoiceField(label='Select "Yes" to process an override', choices=override_choices, required=False, widget=forms.Select(attrs={'class': 'form-control'}))

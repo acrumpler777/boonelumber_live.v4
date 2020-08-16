@@ -540,7 +540,6 @@ def purchase_order_func(request):
 
                 return redirect('inventory_management')
 
-
     form = POForm()
     context = {
                 'form':form
@@ -594,7 +593,7 @@ def update_inventory_item(request, pk):
 
 
     if request.method == 'POST':
-        form = inventory_adjustment_form(request.POST,initial={'unique_product1':update_item})  #alter this form
+        form = inventory_adjustment_form(request.POST,initial={'unique_product1':update_item})
         if form.is_valid():
 
             unique_product1 = form.cleaned_data['unique_product1']
@@ -707,7 +706,7 @@ def sales_order(request):
             so_length3 = form.cleaned_data['so_length3']
             so_unique_product3 = '{0} | {1} | {2}'.format(so_type_grade3, so_size3, so_length3)
             so_order_quantity3 = form.cleaned_data['so_order_quantity3']
-            if so_unique_product2 == "---- | ---- | ----":
+            if so_unique_product3 == "---- | ---- | ----":
                 so_product3_db = True
             else:
                 so_product3_db = product.objects.filter(unique_product=so_unique_product3).exists()
