@@ -685,7 +685,6 @@ def sales_order(request):
             so_length2 = form.cleaned_data['so_length2']
             so_unique_product2 = '{0} | {1} | {2}'.format(so_type_grade2, so_size2, so_length2)
             so_order_quantity2 = form.cleaned_data['so_order_quantity2']
-            print(so_unique_product2)
             if so_unique_product2 == "---- | ---- | ----":
                 so_product2_db = True
             else:
@@ -1251,7 +1250,7 @@ def sales_order(request):
                     messages.info(request, 'Product "{0}" does not exist, Contact adminstrator to add product to inventory.'.format(unique_product20), extra_tags='exist_20')
 
                 if so_product20_db == False:
-                    messages.info(request, 'Product "{0}" does not exist, Contact adminstrator to add product to inventory.'.format(so_unique_product1), extra_tags='so_xist20')
+                    messages.info(request, 'Product "{0}" does not exist, Contact adminstrator to add product to inventory.'.format(so_unique_product20), extra_tags='so_xist20')
 
                 context = {
                     'form': form,
@@ -1978,7 +1977,6 @@ def analyze_inventory(request):
             else:
                 dataset2_values.append(cal)
 
-
     dataset3 = product.objects.order_by('total_quantity').values('unique_product').annotate(total=Sum('total_quantity'))  # shows 10 products with the lowest inventory count
     dataset3_labels = []
     dataset3_values = []
@@ -2015,7 +2013,6 @@ def analyze_inventory(request):
                     dataset4_values.append(cal)
 
     dataset4_zip = list(zip(dataset4_labels, dataset4_values))
-
 
     context = {
         'dataset1_labels':dataset1_labels,
