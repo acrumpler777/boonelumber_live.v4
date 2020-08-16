@@ -2028,3 +2028,4 @@ def analyze_inventory(request):
 
     }
     return render(request, 'inventory_management/analyze_inventory.html', context)
+
