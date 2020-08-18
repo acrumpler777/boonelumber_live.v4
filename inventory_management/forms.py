@@ -331,6 +331,7 @@ class Sales_Order_Form(forms.Form):
     shipping_method = forms.ChoiceField(label='Shipping Method', choices=shipping_method_choices, required=False, widget=forms.Select(attrs={'class': 'form-control'}))
     payment_terms = forms.ChoiceField(label='Payment Terms', choices=payment_term_choices, required=False, widget=forms.Select(attrs={'class': 'form-control'}))
     date = forms.DateField(widget=DateInput(attrs={'class': 'form-control' }), required=False)
+    ship_by = forms.DateField(widget=DateInput(attrs={'class': 'form-control'}), required=False)
     override = forms.ChoiceField(label='Select "Yes" to process an override', choices=override_choices, required=False, widget=forms.Select(attrs={'class': 'form-control'}))
 
     #Sale order items

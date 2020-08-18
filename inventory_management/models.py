@@ -152,6 +152,7 @@ class sales_order_model(models.Model):
     shipping_method = models.CharField("Shipping Method", blank=True, null=True, max_length=200)
     payment_terms = models.CharField("Payment Terms", blank=True, null=True, max_length=200)
     date = models.CharField('Date', blank=True, null=True, max_length=200)
+    ship_by = models.CharField('Ship By', blank=True, null=True, max_length=200)
     override = models.CharField("Override", blank=True, null=True, max_length=200)
 
     so_unique_product1 = models.CharField("Unique Product #1", max_length=200, blank=True, null=True)

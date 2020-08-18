@@ -648,6 +648,7 @@ def sales_order(request):
             payment_terms = form.cleaned_data['payment_terms']
             shipping_method = form.cleaned_data['shipping_method']
             date = form.cleaned_data['date']
+            ship_by = form.cleaned_data['ship_by']
             override = form.cleaned_data['override']
 
             type_grade1 = form.cleaned_data['type_grade1']
@@ -1634,7 +1635,7 @@ def sales_order(request):
                 db_insert = sales_order_model(to=to, ship_to=ship_to, po_number=po_number, phone=phone,
                                               sales_rep=sales_rep,
                                               customer_contact=customer_contact, shipping_method=shipping_method,
-                                              payment_terms=payment_terms, date=date, override=override,
+                                              payment_terms=payment_terms, date=date, ship_by=ship_by, override=override,
                                               so_unique_product1=so_unique_product1,
                                               so_order_quantity1=so_order_quantity1,
                                               so_unique_product2=so_unique_product2,
