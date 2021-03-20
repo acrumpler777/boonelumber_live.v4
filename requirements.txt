@@ -9,7 +9,7 @@ django-form-tags==2.0
 django-storages==1.9.1
 django-svg-templatetag==1.0.1
 django-widget-tweaks==1.4.8
-djangorestframework==3.11.1
+djangorestframework==3.11.2
 docutils==0.16
 gunicorn==20.0.4
 jmespath==0.10.0
